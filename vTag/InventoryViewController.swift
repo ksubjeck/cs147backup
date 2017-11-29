@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import os.log
 
 class InventoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //self.navigationController?.navigationBar.tintColor = UIColor.white;
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +32,6 @@ class InventoryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

@@ -10,6 +10,7 @@
 		D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */; };
 		D95965501FCE6201004CEBE4 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654F1FCE6201004CEBE4 /* Friends.swift */; };
 		D95965521FCE665E004CEBE4 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95965511FCE665E004CEBE4 /* ExploreViewController.swift */; };
+		D95965541FCE8F75004CEBE4 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95965531FCE8F75004CEBE4 /* SegueFromLeft.swift */; };
 		D97C52C31FC3F09300B943F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C52C21FC3F09300B943F5 /* AppDelegate.swift */; };
 		D97C52C51FC3F09300B943F5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D97C52C41FC3F09300B943F5 /* art.scnassets */; };
 		D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C52C61FC3F09300B943F5 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		D959654F1FCE6201004CEBE4 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		D95965511FCE665E004CEBE4 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		D95965531FCE8F75004CEBE4 /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		D97C52BF1FC3F09300B943F5 /* vTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97C52C21FC3F09300B943F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D97C52C41FC3F09300B943F5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */,
 				D959654F1FCE6201004CEBE4 /* Friends.swift */,
 				D97C52C81FC3F09300B943F5 /* Main.storyboard */,
+				D95965531FCE8F75004CEBE4 /* SegueFromLeft.swift */,
 				D95965511FCE665E004CEBE4 /* ExploreViewController.swift */,
 				D97C52CB1FC3F09300B943F5 /* Assets.xcassets */,
 				D97C52CD1FC3F09300B943F5 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95965541FCE8F75004CEBE4 /* SegueFromLeft.swift in Sources */,
 				D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */,
 				D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */,
 				D95965521FCE665E004CEBE4 /* ExploreViewController.swift in Sources */,
