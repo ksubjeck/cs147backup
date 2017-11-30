@@ -10,9 +10,11 @@ import UIKit
 
 class InventoryTableViewController: UITableViewController {
 
+    var tags = [Tag](); //array of tags
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadTags();
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,25 +30,53 @@ class InventoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return tags.count;
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cellIdentifier = "InventoryTableViewCell";
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? InventoryTableViewCell
+        else {
+            fatalError("The dequeued cell is not an instance of inventoryTableViewCell.")
+        }
+        
+        let tag = tags[indexPath.row];
+        
+        cell.name.text = tag.name
+        cell.DateLabel.text = tag.dateDue
+        cell.PhotoImageView.image = tag.photo
 
         return cell
     }
-    */
+ 
+    
+    
+    private func loadTags(){
+        let photo1 = UIImage(named: "VTag Logo");
+        guard let tag1 = Tag(name: "Get VTag Working", photo: photo1, dateDue: "Thursday, Nov 30") else {
+            fatalError("Failed to instantiate tag1");
+        }
+        guard let tag2 = Tag(name: "Go to Practice", photo: photo1, dateDue: "Wednesday, Nov 29") else {
+            fatalError("Failed to instantiate tag2");
+        }
+        guard let tag3 = Tag(name: "Eat Dinner", photo: photo1, dateDue: "Wednesday, Nov 29") else {
+            fatalError("Failed to instantiate tag2");
+        }
+        tags += [tag1, tag2, tag3];
+    }
 
+    
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -10,6 +10,13 @@ import UIKit
 
 class InventoryTableViewCell: UITableViewCell {
 
+
+
+
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var PhotoImageView: UIImageView!
+    @IBOutlet weak var DateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

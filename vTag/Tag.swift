@@ -6,4 +6,25 @@
 //  Copyright © 2017 VTag. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Tag {
+    
+    var name: String
+    var photo: UIImage?
+    var dateDue: String
+    var dateMade: String
+    var creator: String
+    
+    init?(name: String, photo: UIImage?, dateDue: String){
+        if(name.isEmpty){
+           return nil;
+        }
+        self.name = name;
+        self.photo = photo;
+        self.dateDue = dateDue;
+        self.dateMade = "Today" //Fix This later
+        self.creator = "Me" //Fix this later
+        
+    }
+}
