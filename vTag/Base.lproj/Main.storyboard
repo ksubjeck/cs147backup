@@ -470,6 +470,7 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="View Sent Tags" id="YU4-yH-7mk">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="RQD-vQ-QTu" kind="show" id="Vpv-Ea-V8E"/>
                                 </connections>
