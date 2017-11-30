@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class InventoryTableViewController: UITableViewController {
 
@@ -46,6 +47,7 @@ class InventoryTableViewController: UITableViewController {
         else {
             fatalError("The dequeued cell is not an instance of inventoryTableViewCell.")
         }
+        
         
         let tag = tags[indexPath.row];
         
@@ -112,14 +114,40 @@ class InventoryTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+        case "Explore":
+            os_log("Going to Explore Window", log: OSLog.default, type: .debug)
+            
+        case "Tag Information":
+            
+            guard let tagDetailViewController = segue.destination as? TagInformation else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedTagCell = sender as? InventoryTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedTagCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedTag = tags[indexPath.row]
+            tagDetailViewController.tag = selectedTag
+            
+        default:
+            os_log("Unidentified Segue", log: OSLog.default, type: .debug)
+            
+            
+        }
     }
-    */
+ 
 
 }

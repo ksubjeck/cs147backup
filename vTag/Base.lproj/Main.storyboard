@@ -50,6 +50,7 @@
                                     <outlet property="DateLabel" destination="TzL-5Y-Aw8" id="ECS-Rc-Xbf"/>
                                     <outlet property="PhotoImageView" destination="iNV-PG-duN" id="JjH-FS-TWM"/>
                                     <outlet property="name" destination="BdF-FV-7dd" id="i9M-3k-kBQ"/>
+                                    <segue destination="jaX-PD-B6C" kind="show" identifier="Tag Information" id="kQ0-5d-EIy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,7 +63,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Explore" id="fhC-hm-ift">
                             <color key="tintColor" red="0.97858996679999999" green="0.99541550349999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="8pY-oU-G8Y" kind="show" id="de1-Vk-mei"/>
+                                <segue destination="8pY-oU-G8Y" kind="show" identifier="Explore" id="de1-Vk-mei"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -177,6 +178,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Beu-vx-r9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2808.8000000000002" y="111.99400299850076"/>
+        </scene>
+        <!--Tag Information-->
+        <scene sceneID="d3k-gF-ceA">
+            <objects>
+                <viewController storyboardIdentifier="Tag Information" title="Tag Information" id="jaX-PD-B6C" customClass="TagInformation" customModule="vTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAJ-ee-kg7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7W1-QN-RqB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgf-oW-qtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2809" y="845"/>
         </scene>
         <!--AR Controller-->
         <scene sceneID="tXr-a1-R10">

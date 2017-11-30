@@ -14,6 +14,7 @@
 		D95965561FCF4ADB004CEBE4 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95965551FCF4ADB004CEBE4 /* InventoryTableViewCell.swift */; };
 		D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95965571FCF50CB004CEBE4 /* InventoryTableViewController.swift */; };
 		D959655A1FCF5F47004CEBE4 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95965591FCF5F47004CEBE4 /* Tag.swift */; };
+		D959655C1FCFD00B004CEBE4 /* TagInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959655B1FCFD00B004CEBE4 /* TagInformation.swift */; };
 		D97C52C31FC3F09300B943F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C52C21FC3F09300B943F5 /* AppDelegate.swift */; };
 		D97C52C51FC3F09300B943F5 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D97C52C41FC3F09300B943F5 /* art.scnassets */; };
 		D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C52C61FC3F09300B943F5 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		D95965551FCF4ADB004CEBE4 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
 		D95965571FCF50CB004CEBE4 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
 		D95965591FCF5F47004CEBE4 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		D959655B1FCFD00B004CEBE4 /* TagInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagInformation.swift; sourceTree = "<group>"; };
 		D97C52BF1FC3F09300B943F5 /* vTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97C52C21FC3F09300B943F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D97C52C41FC3F09300B943F5 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */,
 				D959654F1FCE6201004CEBE4 /* Friends.swift */,
 				D97C52C81FC3F09300B943F5 /* Main.storyboard */,
+				D959655B1FCFD00B004CEBE4 /* TagInformation.swift */,
 				D95965591FCF5F47004CEBE4 /* Tag.swift */,
 				D95965571FCF50CB004CEBE4 /* InventoryTableViewController.swift */,
 				D95965551FCF4ADB004CEBE4 /* InventoryTableViewCell.swift */,
@@ -229,6 +232,7 @@
 				D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */,
 				D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */,
 				D95965521FCE665E004CEBE4 /* ExploreViewController.swift in Sources */,
+				D959655C1FCFD00B004CEBE4 /* TagInformation.swift in Sources */,
 				D95965561FCF4ADB004CEBE4 /* InventoryTableViewCell.swift in Sources */,
 				D959655A1FCF5F47004CEBE4 /* Tag.swift in Sources */,
 				D97C52C31FC3F09300B943F5 /* AppDelegate.swift in Sources */,
