@@ -10,18 +10,31 @@ import UIKit
 
 class TagInformation: UIViewController {
 
-    var tag : Tag
-    var name: String
-    var photo: UIImage?
-    var dueDate: NSDate
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var dueDate: UIDatePicker!
+    @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var takePhoto: UIButton!
+    @IBOutlet weak var camerRollButton: UIButton!
+    var tag: Tag?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //No interactions
+        name.isUserInteractionEnabled = false;
+        takePhoto.isEnabled = false;
+        takePhoto.isHidden = true;
+        camerRollButton.isEnabled = false;
+        camerRollButton.isHidden = true;
+        dueDate.isUserInteractionEnabled = false;
+        
+        
         self.navigationController?.navigationBar.tintColor = UIColor.white;
-        name.text = tag.name;
-        photo = tag.photo;
-        dueDate = t;
+        name.text = tag?.name;
+        photo.image = tag?.photo;
+        
+        //dueDate = ;
         
     }
 
