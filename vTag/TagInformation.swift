@@ -16,6 +16,11 @@ class TagInformation: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var takePhoto: UIButton!
     @IBOutlet weak var camerRollButton: UIButton!
+    @IBOutlet weak var editAndSaveButton: UIBarButtonItem!
+    
+    @IBOutlet weak var markCompletedButton: UIButton!
+    
+    
     var tag: Tag?
     
     override func viewDidLoad() {
@@ -42,6 +47,43 @@ class TagInformation: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func EditButtonPressed(_ sender: Any) {
+        if(editAndSaveButton.title == "Edit"){
+            editAndSaveButton.title = "Save";
+            name.isUserInteractionEnabled = true;
+            takePhoto.isEnabled = true;
+            takePhoto.isHidden = false;
+            camerRollButton.isEnabled = true;
+            camerRollButton.isHidden = false;
+            dueDate.isUserInteractionEnabled = true;
+            markCompletedButton.isHidden = true;
+            markCompletedButton.isEnabled = false;
+            
+            name.placeholder = name.text;
+            name.text = "";
+        } else {
+            editAndSaveButton.title = "Edit";
+            name.isUserInteractionEnabled = false;
+            takePhoto.isEnabled = false;
+            takePhoto.isHidden = true;
+            camerRollButton.isEnabled = false;
+            camerRollButton.isHidden = true;
+            dueDate.isUserInteractionEnabled = false;
+            markCompletedButton.isHidden = false;
+            markCompletedButton.isEnabled = true;
+            
+            if(name.text == ""){
+                name.text = name.placeholder;
+            }
+        }
+        
+    }
+    
+    
+    
+    
     
 
     /*

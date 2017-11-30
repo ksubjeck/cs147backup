@@ -1072,12 +1072,21 @@
                         <viewLayoutGuide key="safeArea" id="GDL-PZ-mOX"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Tag Information" id="GXN-ns-5sK"/>
+                    <navigationItem key="navigationItem" title="Tag Information" id="GXN-ns-5sK">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="1tr-nc-H1B">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="EditButtonPressed:" destination="cJH-4u-Ogs" id="Vc9-hy-41L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="camerRollButton" destination="leT-PP-Edg" id="aSb-uO-5oz"/>
                         <outlet property="completeButton" destination="vm2-eK-M5R" id="w7S-Sp-GVk"/>
                         <outlet property="dueDate" destination="Fdv-DZ-xTW" id="uEc-Ck-fnC"/>
+                        <outlet property="editAndSaveButton" destination="1tr-nc-H1B" id="6qk-Bb-UW8"/>
+                        <outlet property="markCompletedButton" destination="vm2-eK-M5R" id="zCH-kj-i5h"/>
                         <outlet property="name" destination="uw1-cM-xj6" id="QWe-aR-aD9"/>
                         <outlet property="photo" destination="7aZ-j5-ScI" id="Hmi-x5-AEC"/>
                         <outlet property="takePhoto" destination="yIX-Wh-26g" id="OJP-m9-bt6"/>
