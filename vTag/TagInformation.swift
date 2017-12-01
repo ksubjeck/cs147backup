@@ -81,6 +81,17 @@ class TagInformation: UIViewController {
         
     }
     
+    @IBAction func tagCompleted(_ sender: Any) {
+
+        for(index, tag) in SharedData.sharedDataInstance.tags.enumerated(){
+            if(tag.name == name.text){
+                SharedData.sharedDataInstance.tags.remove(at: index);
+                break;
+            }
+        }
+        
+        self.navigationController?.popViewController(animated: true);
+    }
     
     
     

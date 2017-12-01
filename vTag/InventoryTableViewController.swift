@@ -10,12 +10,11 @@ import UIKit
 import os.log
 
 class InventoryTableViewController: UITableViewController {
-
-    var tags = [Tag](); //array of tags
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTags();
+        SharedData.sharedDataInstance.loadTags();
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +36,7 @@ class InventoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return tags.count;
+        return SharedData.sharedDataInstance.tags.count;
     }
 
     
@@ -49,7 +48,7 @@ class InventoryTableViewController: UITableViewController {
         }
         
         
-        let tag = tags[indexPath.row];
+        let tag = SharedData.sharedDataInstance.tags[indexPath.row];
         
         cell.name.text = tag.name
         cell.DateLabel.text = tag.dateDue
@@ -71,7 +70,7 @@ class InventoryTableViewController: UITableViewController {
         guard let tag3 = Tag(name: "Eat Dinner", photo: photo1, dateDue: "Wednesday, Nov 29") else {
             fatalError("Failed to instantiate tag2");
         }
-        tags += [tag1, tag2, tag3];
+        SharedData.sharedDataInstance.tags += [tag1, tag2, tag3];
     }
 
     
@@ -139,7 +138,7 @@ class InventoryTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            let selectedTag = tags[indexPath.row]
+            let selectedTag = SharedData.sharedDataInstance.tags[indexPath.row]
             tagDetailViewController.tag = selectedTag
             
         default:

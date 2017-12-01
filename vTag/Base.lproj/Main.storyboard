@@ -132,6 +132,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.21176470588235294" green="0.52941176470588236" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="setTag:" destination="8pY-oU-G8Y" eventType="touchUpInside" id="7jF-xx-k5c"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,6 +171,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tagDate" destination="Kt2-nT-JUN" id="oYB-11-D3o"/>
+                        <outlet property="tagName" destination="yZM-ym-APD" id="9rC-gI-ztG"/>
+                        <outlet property="tagPhoto" destination="MZM-J1-MTC" id="UlB-nw-qvZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Beu-vx-r9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1045,6 +1053,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.21176470589999999" green="0.52941176469999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tagCompleted:" destination="cJH-4u-Ogs" eventType="touchUpInside" id="WZv-yZ-d38"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
