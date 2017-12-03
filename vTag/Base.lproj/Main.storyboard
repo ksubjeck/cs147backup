@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646" y="668"/>
+            <point key="canvasLocation" x="-1697" y="1022"/>
         </scene>
         <!--Sent Tags-->
         <scene sceneID="QU2-fG-U3n">
@@ -553,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOu-Cu-Q3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="406" y="-869"/>
+            <point key="canvasLocation" x="-938" y="-83"/>
         </scene>
         <!--Add From Contacts-->
         <scene sceneID="Qqg-H2-2Xj">
@@ -824,7 +824,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="153" y="-1663"/>
+            <point key="canvasLocation" x="26" y="-869"/>
         </scene>
         <!--Add Friends-->
         <scene sceneID="XgH-QL-UnX">
@@ -842,7 +842,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMN-qI-61b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-647" y="-478"/>
+            <point key="canvasLocation" x="-938" y="-869"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="q68-0S-dgf">
@@ -971,7 +971,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFW-GD-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="1021"/>
+            <point key="canvasLocation" x="694" y="1023"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pM3-fN-wfN">
