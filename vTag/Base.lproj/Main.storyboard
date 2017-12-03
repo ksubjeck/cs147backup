@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,6 +60,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Inventory" id="rON-PC-hJn">
+                        <barButtonItem key="leftBarButtonItem" title="My Profile" id="rRz-NN-nrD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="qeN-eZ-1hd" kind="show" identifier="ProfileSegue" id="ulB-58-Kpt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Explore" id="fhC-hm-ift">
                             <color key="tintColor" red="0.97858996679999999" green="0.99541550349999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -195,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="846"/>
+            <point key="canvasLocation" x="-646" y="668"/>
         </scene>
         <!--Sent Tags-->
         <scene sceneID="QU2-fG-U3n">
@@ -470,20 +475,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Send Tag to..." id="1aq-fi-D0s">
-                        <rightBarButtonItems>
-                            <barButtonItem title="My Profile" id="RiJ-kR-4r6">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="qeN-eZ-1hd" kind="show" id="ONZ-lr-bMQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="View Sent Tags" id="YU4-yH-7mk">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="RQD-vQ-QTu" kind="show" id="Vpv-Ea-V8E"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="View Sent Tags" id="YU4-yH-7mk">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="RQD-vQ-QTu" kind="show" id="Vpv-Ea-V8E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -556,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOu-Cu-Q3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5948" y="470.91454272863569"/>
+            <point key="canvasLocation" x="406" y="-869"/>
         </scene>
         <!--Add From Contacts-->
         <scene sceneID="Qqg-H2-2Xj">
@@ -827,7 +824,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="5948" y="-195.6521739130435"/>
+            <point key="canvasLocation" x="153" y="-1663"/>
         </scene>
         <!--Add Friends-->
         <scene sceneID="XgH-QL-UnX">
@@ -845,7 +842,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMN-qI-61b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4993" y="134"/>
+            <point key="canvasLocation" x="-647" y="-478"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="q68-0S-dgf">
@@ -900,7 +897,8 @@
                         <viewLayoutGuide key="safeArea" id="H1d-YX-VwO"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="wiN-lG-Pxw">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="yna-xd-CeG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="yna-xd-CeG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="8gd-GT-OZX" kind="show" id="pnJ-RU-Ngu"/>
                             </connections>
@@ -909,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oj1-9v-Ipm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4264.8000000000002" y="866.71664167916049"/>
+            <point key="canvasLocation" x="694" y="112"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="3YI-N4-i4a">
@@ -973,7 +971,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFW-GD-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5112.8000000000002" y="880.20989505247383"/>
+            <point key="canvasLocation" x="694" y="1021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pM3-fN-wfN">
@@ -1112,6 +1110,6 @@
         <image name="VTag Logo" width="345" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ONZ-lr-bMQ"/>
+        <segue reference="U3B-xJ-fYM"/>
     </inferredMetricsTieBreakers>
 </document>
