@@ -49,20 +49,13 @@ class ExploreViewController: UIViewController {
         let myDate = formatter.string(from: yourDate!);
         
         if (tagName.text == "") {
-           tagName.text = "Untitiled";
+           tagName.text = "Untitled";
         }
         
         let currTag = Tag(name: tagName.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate);
         
-        
-        print (SharedData.sharedDataInstance.tags[0].name)
-        print (SharedData.sharedDataInstance.tags[1].name)
-        print (SharedData.sharedDataInstance.tags[2].name)
         SharedData.sharedDataInstance.tags.append(currTag!);
-        print (SharedData.sharedDataInstance.tags[0].name)
-        print (SharedData.sharedDataInstance.tags[1].name)
-        print (SharedData.sharedDataInstance.tags[2].name)
-        print (SharedData.sharedDataInstance.tags[3].name)
+
         
         
         self.navigationController?.popViewController(animated: true);

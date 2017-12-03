@@ -82,19 +82,12 @@ class TagInformation: UIViewController {
     }
     
     @IBAction func tagCompleted(_ sender: Any) {
-
-        print (SharedData.sharedDataInstance.tags[0].name)
-        print (SharedData.sharedDataInstance.tags[1].name)
-        print (SharedData.sharedDataInstance.tags[2].name)
         for(index, tag) in SharedData.sharedDataInstance.tags.enumerated(){
             if(tag.name == name.text){
                 SharedData.sharedDataInstance.tags.remove(at: index);
                 break;
             }
         }
-        print (SharedData.sharedDataInstance.tags[0].name)
-        print (SharedData.sharedDataInstance.tags[1].name)
-        
         self.navigationController?.popViewController(animated: true);
     }
     
