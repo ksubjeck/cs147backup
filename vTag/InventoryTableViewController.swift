@@ -118,6 +118,16 @@ class InventoryTableViewController: UITableViewController {
     */
 
     
+    //Dismiss inventory and goes to explore page
+    @IBAction func pressExploreButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil);
+    }
+    
+    
+    
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -125,9 +135,7 @@ class InventoryTableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
-        case "Explore":
-            os_log("Going to Explore Window", log: OSLog.default, type: .debug)
-            
+
         case "Tag Information":
             
             guard let tagDetailViewController = segue.destination as? TagInformation else {
