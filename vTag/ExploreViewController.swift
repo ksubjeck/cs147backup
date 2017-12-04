@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController {
+class ExploreViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tagName: UITextField!
     @IBOutlet weak var tagPhoto: UIImageView!
@@ -17,14 +17,18 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white;
-        
+        self.tagName.delegate = self;
         
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true);
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        tagName.resignFirstResponder();
+        return true;
     }
     
 
@@ -57,7 +61,7 @@ class ExploreViewController: UIViewController {
         SharedData.sharedDataInstance.tags.append(currTag!);
 
         
-        
-        self.navigationController?.popViewController(animated: true);
+        dismiss(animated: true, completion: nil);
+        //self.navigationController?.popViewController(animated: true);
     }
 }
