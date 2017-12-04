@@ -77,9 +77,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             performSegue(withIdentifier: "ExploreModally", sender: nil)
 
         }
-        
-
-        
     }
     
     
