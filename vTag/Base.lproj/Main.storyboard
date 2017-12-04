@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="1188"/>
+            <point key="canvasLocation" x="694" y="1188"/>
         </scene>
         <!--Sent Tags-->
         <scene sceneID="QU2-fG-U3n">
@@ -976,7 +976,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFW-GD-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.8" y="1022.3388305847077"/>
+            <point key="canvasLocation" x="-129" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pM3-fN-wfN">
@@ -1130,13 +1130,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4D-Cx-j7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1638" y="1188"/>
+            <point key="canvasLocation" x="-178" y="1188"/>
         </scene>
     </scenes>
     <resources>
         <image name="VTag Logo" width="345" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ulB-58-Kpt"/>
+        <segue reference="U3B-xJ-fYM"/>
     </inferredMetricsTieBreakers>
 </document>
