@@ -23,6 +23,8 @@
 		D97C52CC1FC3F09300B943F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D97C52CB1FC3F09300B943F5 /* Assets.xcassets */; };
 		D97C52CF1FC3F09300B943F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97C52CD1FC3F09300B943F5 /* LaunchScreen.storyboard */; };
 		D97C52DA1FC3F09300B943F5 /* vTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C52D91FC3F09300B943F5 /* vTagTests.swift */; };
+		F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921F3A01FD4EB9E0057E15C /* SendTagInformationViewController.swift */; };
+		F921F3A31FD4F2C60057E15C /* SentTagConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921F3A21FD4F2C60057E15C /* SentTagConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		D97C52D51FC3F09300B943F5 /* vTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97C52D91FC3F09300B943F5 /* vTagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vTagTests.swift; sourceTree = "<group>"; };
 		D97C52DB1FC3F09300B943F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F921F3A01FD4EB9E0057E15C /* SendTagInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTagInformationViewController.swift; sourceTree = "<group>"; };
+		F921F3A21FD4F2C60057E15C /* SentTagConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTagConfirmationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */,
 				D959654F1FCE6201004CEBE4 /* Friends.swift */,
 				D97C52C81FC3F09300B943F5 /* Main.storyboard */,
+				F921F3A21FD4F2C60057E15C /* SentTagConfirmationViewController.swift */,
 				66BA1D0C1FD0D80200B506D2 /* SharedData.swift */,
 				D959655B1FCFD00B004CEBE4 /* TagInformation.swift */,
 				D95965591FCF5F47004CEBE4 /* Tag.swift */,
@@ -110,6 +115,7 @@
 				D95965551FCF4ADB004CEBE4 /* InventoryTableViewCell.swift */,
 				D95965531FCE8F75004CEBE4 /* SegueFromLeft.swift */,
 				D95965511FCE665E004CEBE4 /* ExploreViewController.swift */,
+				F921F3A01FD4EB9E0057E15C /* SendTagInformationViewController.swift */,
 				D97C52CB1FC3F09300B943F5 /* Assets.xcassets */,
 				D97C52CD1FC3F09300B943F5 /* LaunchScreen.storyboard */,
 				D97C52D01FC3F09300B943F5 /* Info.plist */,
@@ -234,6 +240,7 @@
 				D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */,
 				D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */,
 				D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */,
+				F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */,
 				D95965521FCE665E004CEBE4 /* ExploreViewController.swift in Sources */,
 				D959655C1FCFD00B004CEBE4 /* TagInformation.swift in Sources */,
 				D95965561FCF4ADB004CEBE4 /* InventoryTableViewCell.swift in Sources */,
@@ -241,6 +248,7 @@
 				D959655A1FCF5F47004CEBE4 /* Tag.swift in Sources */,
 				D97C52C31FC3F09300B943F5 /* AppDelegate.swift in Sources */,
 				D95965501FCE6201004CEBE4 /* Friends.swift in Sources */,
+				F921F3A31FD4F2C60057E15C /* SentTagConfirmationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
