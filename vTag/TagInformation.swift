@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TagInformation: UIViewController {
+class TagInformation: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var photo: UIImageView!
@@ -22,9 +22,11 @@ class TagInformation: UIViewController {
     
     
     var tag: Tag?
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.name.delegate = self;
         
         //No interactions
         name.isUserInteractionEnabled = false;
@@ -41,11 +43,22 @@ class TagInformation: UIViewController {
         
         //dueDate = ;
         
+        for(location, tag) in SharedData.sharedDataInstance.tags.enumerated(){
+            if(tag.name == name.text){
+                index = location;
+                break;
+            }
+        }
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true);
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        name.resignFirstResponder();
+        return true;
     }
     
     
@@ -63,7 +76,7 @@ class TagInformation: UIViewController {
             
             name.placeholder = name.text;
             name.text = "";
-        } else {
+        } else { //Button says save
             editAndSaveButton.title = "Edit";
             name.isUserInteractionEnabled = false;
             takePhoto.isEnabled = false;
@@ -76,18 +89,26 @@ class TagInformation: UIViewController {
             
             if(name.text == ""){
                 name.text = name.placeholder;
+            } else {
+                SharedData.sharedDataInstance.tags[index!].name = name.text!;
             }
+            
+            
+            
+            //Sets proper date info
+            let formatter = DateFormatter();
+            formatter.dateFormat = "MM-dd-yyy, HH:mm:ss";
+            let myString = formatter.string(from: dueDate.date);
+            let yourDate = formatter.date(from: myString);
+            formatter.dateFormat = "MM-dd-yyyy"; // again convert your date to string
+            let myDate = formatter.string(from: yourDate!);
+            SharedData.sharedDataInstance.tags[index!].dateDue = myDate;
         }
         
     }
     
     @IBAction func tagCompleted(_ sender: Any) {
-        for(index, tag) in SharedData.sharedDataInstance.tags.enumerated(){
-            if(tag.name == name.text){
-                SharedData.sharedDataInstance.tags.remove(at: index);
-                break;
-            }
-        }
+        SharedData.sharedDataInstance.tags.remove(at: index!);
         self.navigationController?.popViewController(animated: true);
     }
     
