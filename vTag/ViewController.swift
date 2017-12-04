@@ -18,7 +18,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.tintColor = UIColor.white;
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -73,6 +74,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             // Use the resulting matrix to position the anchor
             sceneView.session.add(anchor: ARAnchor(transform: finalTransform))
             // sceneView.session.add(anchor: ARAnchor(transform: hit.worldTransform))
+            performSegue(withIdentifier: "ExploreModally", sender: nil)
+
         }
         
 
