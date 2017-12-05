@@ -200,7 +200,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Inventory" id="9T9-Ra-ZGc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="q3s-Ea-tfE" kind="presentation" id="v4e-yE-Ozs"/>
+                                <segue destination="q3s-Ea-tfE" kind="presentation" customClass="SegueFromLeft" customModule="vTag" customModuleProvider="target" id="v4e-yE-Ozs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Friends" id="Adj-ii-vHL">
@@ -959,7 +959,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-j5-ScI">
-                                <rect key="frame" x="87" y="72" width="200" height="94"/>
+                                <rect key="frame" x="87" y="116" width="200" height="94"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7aZ-j5-ScI" secondAttribute="height" multiplier="100:47" id="5gD-0j-NVO"/>
@@ -984,10 +984,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EXY-sK-5hh">
-                                <rect key="frame" x="96" y="174" width="183" height="74.5"/>
+                                <rect key="frame" x="96" y="218" width="183" height="30.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIX-Wh-26g">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="74.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Take Photo">
                                             <color key="titleColor" red="0.98431372549999996" green="0.63921568630000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -995,7 +995,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leT-PP-Edg">
-                                        <rect key="frame" x="98" y="0.0" width="85" height="74.5"/>
+                                        <rect key="frame" x="98" y="0.0" width="85" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Camera Roll">
                                             <color key="titleColor" red="0.98431372549999996" green="0.63921568630000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -1325,7 +1325,7 @@
         <image name="VTag Logo" width="345" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9va-Xk-oSM"/>
+        <segue reference="LLp-sc-i2z"/>
         <segue reference="ulB-58-Kpt"/>
     </inferredMetricsTieBreakers>
 </document>
