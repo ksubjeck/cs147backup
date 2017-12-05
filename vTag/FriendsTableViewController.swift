@@ -1,20 +1,19 @@
 //
-//  InventoryTableViewController.swift
+//  FriendsTableViewController.swift
 //  vTag
 //
-//  Created by Austin-Caleb Flores on 11/29/17.
+//  Created by Keaton Subjeck on 12/3/17.
 //  Copyright © 2017 VTag. All rights reserved.
 //
 
 import UIKit
 import os.log
 
-class InventoryTableViewController: UITableViewController {
-    
+class FriendsTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        SharedData.sharedDataInstance.loadTags();
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,51 +33,30 @@ class InventoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return SharedData.sharedDataInstance.tags.count;
+        // #warning Incomplete implementation, return the number of rows
+        return SharedData.sharedDataInstance.friends.count;
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "InventoryTableViewCell";
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? InventoryTableViewCell
+        let cellIdentifier = "FriendsTableViewCell";
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FriendsTableViewCell
         else {
-            fatalError("The dequeued cell is not an instance of inventoryTableViewCell.")
+            fatalError("The dequeued cell is not an instance of friendsTableViewCell.")
         }
-        
-        
-        let tag = SharedData.sharedDataInstance.tags[indexPath.row];
-        
-        cell.name.text = tag.name
-        cell.DateLabel.text = tag.dateDue
-        cell.PhotoImageView.image = tag.photo
+ 
+        let tag = SharedData.sharedDataInstance.friends[indexPath.row];
+        cell.name.text = tag;
 
         return cell
     }
- 
     
-    
-    private func loadTags(){
-        let photo1 = UIImage(named: "VTag Logo");
-        guard let tag1 = Tag(name: "Get VTag Working", photo: photo1, dateDue: "Thursday, Nov 30") else {
-            fatalError("Failed to instantiate tag1");
-        }
-        guard let tag2 = Tag(name: "Go to Practice", photo: photo1, dateDue: "Wednesday, Nov 29") else {
-            fatalError("Failed to instantiate tag2");
-        }
-        guard let tag3 = Tag(name: "Eat Dinner", photo: photo1, dateDue: "Wednesday, Nov 29") else {
-            fatalError("Failed to instantiate tag2");
-        }
-        SharedData.sharedDataInstance.tags += [tag1, tag2, tag3];
-    }
 
-    
-    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -115,47 +93,22 @@ class InventoryTableViewController: UITableViewController {
     */
 
     
-    //Dismiss inventory and goes to explore page
-    @IBAction func pressExploreButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil);
-    }
-    
-    
-    
-    
-    
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        switch(segue.identifier ?? "") {
-
-        case "Tag Information":
-            
-            guard let tagDetailViewController = segue.destination as? TagInformation else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            
-            guard let selectedTagCell = sender as? InventoryTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
-            }
-            
-            guard let indexPath = tableView.indexPath(for: selectedTagCell) else {
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            
-            let selectedTag = SharedData.sharedDataInstance.tags[indexPath.row]
-            tagDetailViewController.tag = selectedTag
-            
+        switch(segue.identifier ?? ""){
+        case "Send To Friend":
+            os_log("Going to Send To Friend view controller", log: OSLog.default, type: .debug)
         default:
-            os_log("Unidentified Segue", log: OSLog.default, type: .debug)
-            
-            
+            os_log("Unidentified Segue", log: OSLog.default,
+                   type: .debug)
         }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
- 
+    
 
 }

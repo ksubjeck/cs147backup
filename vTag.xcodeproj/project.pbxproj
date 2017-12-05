@@ -26,6 +26,8 @@
 		D97C52DA1FC3F09300B943F5 /* vTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C52D91FC3F09300B943F5 /* vTagTests.swift */; };
 		F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921F3A01FD4EB9E0057E15C /* SendTagInformationViewController.swift */; };
 		F921F3A31FD4F2C60057E15C /* SentTagConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921F3A21FD4F2C60057E15C /* SentTagConfirmationViewController.swift */; };
+		F92F3ED01FD501B500456A04 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F3ECF1FD501B500456A04 /* FriendsTableViewController.swift */; };
+		F92F3ED21FD501D300456A04 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F3ED11FD501D300456A04 /* FriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		D97C52DB1FC3F09300B943F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F921F3A01FD4EB9E0057E15C /* SendTagInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTagInformationViewController.swift; sourceTree = "<group>"; };
 		F921F3A21FD4F2C60057E15C /* SentTagConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTagConfirmationViewController.swift; sourceTree = "<group>"; };
+		F92F3ECF1FD501B500456A04 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		F92F3ED11FD501D300456A04 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		D97C52C11FC3F09300B943F5 /* vTag */ = {
 			isa = PBXGroup;
 			children = (
+				F92F3ECF1FD501B500456A04 /* FriendsTableViewController.swift */,
 				D97C52C21FC3F09300B943F5 /* AppDelegate.swift */,
 				D97C52C41FC3F09300B943F5 /* art.scnassets */,
 				D97C52C61FC3F09300B943F5 /* ViewController.swift */,
@@ -122,6 +127,7 @@
 				D97C52CB1FC3F09300B943F5 /* Assets.xcassets */,
 				D97C52CD1FC3F09300B943F5 /* LaunchScreen.storyboard */,
 				D97C52D01FC3F09300B943F5 /* Info.plist */,
+				F92F3ED11FD501D300456A04 /* FriendsTableViewCell.swift */,
 			);
 			path = vTag;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 				D95965541FCE8F75004CEBE4 /* SegueFromLeft.swift in Sources */,
 				D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */,
 				D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */,
+				F92F3ED21FD501D300456A04 /* FriendsTableViewCell.swift in Sources */,
 				D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */,
 				F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */,
 				D95965521FCE665E004CEBE4 /* ExploreViewController.swift in Sources */,
@@ -252,6 +259,7 @@
 				D959655A1FCF5F47004CEBE4 /* Tag.swift in Sources */,
 				D97C52C31FC3F09300B943F5 /* AppDelegate.swift in Sources */,
 				D95965501FCE6201004CEBE4 /* Friends.swift in Sources */,
+				F92F3ED01FD501B500456A04 /* FriendsTableViewController.swift in Sources */,
 				F921F3A31FD4F2C60057E15C /* SentTagConfirmationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

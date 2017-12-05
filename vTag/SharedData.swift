@@ -10,7 +10,7 @@ import UIKit
 class SharedData {
     static let sharedDataInstance = SharedData();
     var tags = [Tag](); //array of tags
-    
+    var friends = ["Tom Petty", "Burt Reynolds", "Kdog"];
     func loadTags(){
         let photo1 = UIImage(named: "VTag Logo");
         guard let tag1 = Tag(name: "Get VTag Working", photo: photo1, dateDue: "Thursday, Nov 30") else {
@@ -24,6 +24,8 @@ class SharedData {
         }
         self.tags += [tag1, tag2, tag3];
     }
+    
+    
 }
 
 
