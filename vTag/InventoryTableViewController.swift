@@ -117,7 +117,13 @@ class InventoryTableViewController: UITableViewController {
     
     //Dismiss inventory and goes to explore page
     @IBAction func pressExploreButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil);
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        view.window!.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false, completion: nil);
+        //dismiss(animated: true, completion: nil);
     }
     
     

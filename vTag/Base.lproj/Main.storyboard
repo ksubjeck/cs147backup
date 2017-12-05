@@ -200,7 +200,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Inventory" id="9T9-Ra-ZGc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="q3s-Ea-tfE" kind="presentation" id="v4e-yE-Ozs"/>
+                                <segue destination="q3s-Ea-tfE" kind="presentation" customClass="SegueFromLeft" customModule="vTag" customModuleProvider="target" id="v4e-yE-Ozs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Friends" id="Adj-ii-vHL">
@@ -457,7 +457,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOu-Cu-Q3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-938" y="-83"/>
+            <point key="canvasLocation" x="-938" y="140"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="R0H-N4-y8J">
+            <objects>
+                <tableViewController id="i54-xl-vaD" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1B1-BN-vAY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="qvY-PL-CAf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qvY-PL-CAf" id="t6I-zU-wUT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="i54-xl-vaD" id="vcy-ii-dS2"/>
+                            <outlet property="delegate" destination="i54-xl-vaD" id="iSH-7k-hp3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0QV-I3-LxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463.19999999999999" y="-1725.7871064467768"/>
         </scene>
         <!--Add From Contacts-->
         <scene sceneID="Qqg-H2-2Xj">
@@ -811,7 +839,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oj1-9v-Ipm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="112"/>
+            <point key="canvasLocation" x="906" y="140"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="3YI-N4-i4a">
@@ -875,7 +903,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFW-GD-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="140"/>
+            <point key="canvasLocation" x="25" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pM3-fN-wfN">
@@ -972,7 +1000,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-j5-ScI">
-                                <rect key="frame" x="87" y="72" width="200" height="94"/>
+                                <rect key="frame" x="87" y="116" width="200" height="94"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7aZ-j5-ScI" secondAttribute="height" multiplier="100:47" id="5gD-0j-NVO"/>
@@ -997,10 +1025,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EXY-sK-5hh">
-                                <rect key="frame" x="96" y="174" width="183" height="74.5"/>
+                                <rect key="frame" x="96" y="218" width="183" height="30.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIX-Wh-26g">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="74.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Take Photo">
                                             <color key="titleColor" red="0.98431372549999996" green="0.63921568630000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -1008,7 +1036,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leT-PP-Edg">
-                                        <rect key="frame" x="98" y="0.0" width="85" height="74.5"/>
+                                        <rect key="frame" x="98" y="0.0" width="85" height="30.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Camera Roll">
                                             <color key="titleColor" red="0.98431372549999996" green="0.63921568630000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -1270,6 +1298,50 @@
             </objects>
             <point key="canvasLocation" x="3944.8000000000002" y="1772.5637181409297"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="VIE-1L-tMW">
+            <objects>
+                <tableViewController id="OsT-Ot-W1W" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wKf-Ge-ef2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bXn-d3-3GX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bXn-d3-3GX" id="pEU-Ek-lBQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HvY-cd-ytq">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HvY-cd-ytq" id="MTQ-O1-POu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fqp-Hv-KEf">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fqp-Hv-KEf" id="8cT-ei-H6M">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OsT-Ot-W1W" id="nCK-oT-U6L"/>
+                            <outlet property="delegate" destination="OsT-Ot-W1W" id="dCB-eV-RiX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eu1-7i-8ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5110" y="1518"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efe-kE-i2U">
             <objects>
@@ -1294,7 +1366,7 @@
         <image name="VTag Logo" width="345" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9va-Xk-oSM"/>
+        <segue reference="LLp-sc-i2z"/>
         <segue reference="ulB-58-Kpt"/>
     </inferredMetricsTieBreakers>
 </document>
