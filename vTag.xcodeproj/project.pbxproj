@@ -105,7 +105,6 @@
 		D97C52C11FC3F09300B943F5 /* vTag */ = {
 			isa = PBXGroup;
 			children = (
-				F92F3ECF1FD501B500456A04 /* FriendsTableViewController.swift */,
 				D97C52C21FC3F09300B943F5 /* AppDelegate.swift */,
 				D97C52C41FC3F09300B943F5 /* art.scnassets */,
 				D97C52C61FC3F09300B943F5 /* ViewController.swift */,
@@ -125,6 +124,7 @@
 				D97C52CD1FC3F09300B943F5 /* LaunchScreen.storyboard */,
 				D97C52D01FC3F09300B943F5 /* Info.plist */,
 				F92F3ED11FD501D300456A04 /* FriendsTableViewCell.swift */,
+				F92F3ECF1FD501B500456A04 /* FriendsTableViewController.swift */,
 			);
 			path = vTag;
 			sourceTree = "<group>";
