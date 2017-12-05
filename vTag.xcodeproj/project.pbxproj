@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6643DA671FD60CB300823D61 /* ExploreMenuWithPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */; };
 		66BA1D0D1FD0D80200B506D2 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA1D0C1FD0D80200B506D2 /* SharedData.swift */; };
 		D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */; };
 		D95965501FCE6201004CEBE4 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654F1FCE6201004CEBE4 /* Friends.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreMenuWithPopup.swift; sourceTree = "<group>"; };
 		66BA1D0C1FD0D80200B506D2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		D959654F1FCE6201004CEBE4 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				D97C52C21FC3F09300B943F5 /* AppDelegate.swift */,
 				D97C52C41FC3F09300B943F5 /* art.scnassets */,
 				D97C52C61FC3F09300B943F5 /* ViewController.swift */,
+				6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */,
 				D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */,
 				D959654F1FCE6201004CEBE4 /* Friends.swift */,
 				D97C52C81FC3F09300B943F5 /* Main.storyboard */,
@@ -250,6 +253,7 @@
 				F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */,
 				D95965521FCE665E004CEBE4 /* ExploreViewController.swift in Sources */,
 				D959655C1FCFD00B004CEBE4 /* TagInformation.swift in Sources */,
+				6643DA671FD60CB300823D61 /* ExploreMenuWithPopup.swift in Sources */,
 				D95965561FCF4ADB004CEBE4 /* InventoryTableViewCell.swift in Sources */,
 				66BA1D0D1FD0D80200B506D2 /* SharedData.swift in Sources */,
 				D959655A1FCF5F47004CEBE4 /* Tag.swift in Sources */,
