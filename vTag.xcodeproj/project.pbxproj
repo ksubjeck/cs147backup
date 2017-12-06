@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		662899381FD6620100111EAC /* AddFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899371FD6620100111EAC /* AddFriendsListViewController.swift */; };
 		6628993A1FD6621E00111EAC /* AddFriendsListViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899391FD6621E00111EAC /* AddFriendsListViewControllerCell.swift */; };
+		6628993C1FD7396E00111EAC /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628993B1FD7396E00111EAC /* AddFriendsViewController.swift */; };
 		6643DA671FD60CB300823D61 /* ExploreMenuWithPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */; };
 		66BA1D0D1FD0D80200B506D2 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA1D0C1FD0D80200B506D2 /* SharedData.swift */; };
 		D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		662899371FD6620100111EAC /* AddFriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsListViewController.swift; sourceTree = "<group>"; };
 		662899391FD6621E00111EAC /* AddFriendsListViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsListViewControllerCell.swift; sourceTree = "<group>"; };
+		6628993B1FD7396E00111EAC /* AddFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddFriendsViewController.swift; path = vTag/AddFriendsViewController.swift; sourceTree = "<group>"; };
 		6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreMenuWithPopup.swift; sourceTree = "<group>"; };
 		66BA1D0C1FD0D80200B506D2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		D97C52B61FC3F09300B943F5 = {
 			isa = PBXGroup;
 			children = (
+				6628993B1FD7396E00111EAC /* AddFriendsViewController.swift */,
 				D97C52C11FC3F09300B943F5 /* vTag */,
 				D97C52D81FC3F09300B943F5 /* vTagTests */,
 				D97C52C01FC3F09300B943F5 /* Products */,
@@ -269,6 +272,7 @@
 				F92F3ED91FD74C2700456A04 /* Friend.swift in Sources */,
 				662899381FD6620100111EAC /* AddFriendsListViewController.swift in Sources */,
 				F921F3A31FD4F2C60057E15C /* SentTagConfirmationViewController.swift in Sources */,
+				6628993C1FD7396E00111EAC /* AddFriendsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
