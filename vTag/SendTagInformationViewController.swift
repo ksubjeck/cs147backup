@@ -14,10 +14,11 @@ class SendTagInformationViewController: UIViewController {
     @IBOutlet weak var tagPhoto: UIImageView!
     @IBOutlet weak var tagDate: UIDatePicker!
     @IBOutlet weak var tagButton: UIButton!
-    var buttonText: String = ""
+    var recipient: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let buttonText = "Send to " + recipient
         self.tagButton.setTitle(buttonText, for: .normal)
     }
     
@@ -39,7 +40,7 @@ class SendTagInformationViewController: UIViewController {
             tagTitle.text = "Untitled";
         }
         
-        let currTag = Tag(name: tagTitle.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate);
+        let currTag = Tag(name: tagTitle.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate, creator: "Me", recipient: recipient);
         
         SharedData.sharedDataInstance.sentTags.append(currTag!);
         dismiss(animated: true, completion: nil)

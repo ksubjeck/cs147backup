@@ -92,11 +92,10 @@ class FriendsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "SendToFriend"){
-            print("kdog is here")
             let popupViewController = segue.destination as? SendTagInformationViewController
             let cell = sender as? FriendsTableViewCell
-            let buttonText = "Send tag to " + (cell?.nameLabel.text!)!
-            popupViewController?.buttonText = buttonText
+            let recipient = (cell?.nameLabel.text!)!
+            popupViewController?.recipient = recipient
         }
         
         // Get the new view controller using segue.destinationViewController.
