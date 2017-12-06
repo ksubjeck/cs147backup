@@ -17,7 +17,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     let nodeName = "ship"
     
     var nodeModelChild:SCNNode!
-    var completed = false
+    var newtag = true;
+    var finalTransform: simd_float4x4?
     
     
     
@@ -60,32 +61,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         hitTestOptions[SCNHitTestOption.boundingBoxOnly] = true
         let hitResults: [SCNHitTestResult]  = sceneView.hitTest(location, options: hitTestOptions)
         if let hit = hitResults.first {
-            nodeModelChild = getParent(hit.node)
-            //if let node = getParent(hit.node) {
-                
-                
-                
-                
-                //node.removeFromParentNode() //TODO: if we comment this out and touch a tag in the world, does it stay there? IF yes, good.
+            newtag = false; //Touching an existing tag
+            if let node = getParent(hit.node) {
+                nodeModelChild = node;
+                //node.removeFromParentNode() //removes node here and now
+                performSegue(withIdentifier: "ExploreModally", sender: nil)
                 return
-            //}
+            }
         }
         
         //Wants to add a tag and rotate to face you
         let hitResultsFeaturePoints: [ARHitTestResult] =
             sceneView.hitTest(location, types: .featurePoint)
         if let hit = hitResultsFeaturePoints.first {
+            newtag = true;
             // Get a transformation matrix with the euler angle of the camera
             let rotate = simd_float4x4(SCNMatrix4MakeRotation(sceneView.session.currentFrame!.camera.eulerAngles.y, 0, 1, 0))
             
             // Combine both transformation matrices
-            let finalTransform = simd_mul(hit.worldTransform, rotate)
-            
-            // Use the resulting matrix to position the anchor
-            sceneView.session.add(anchor: ARAnchor(transform: finalTransform))
-            // sceneView.session.add(anchor: ARAnchor(transform: hit.worldTransform))
+            finalTransform = simd_mul(hit.worldTransform, rotate)
             performSegue(withIdentifier: "ExploreModally", sender: nil)
-
         }
     }
     
@@ -120,15 +115,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         // Run the view's session
         sceneView.session.run(configuration)
-        
-        if (completed && nodeModelChild != nil) {
-            nodeModelChild.removeFromParentNode()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -138,24 +128,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    
-    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -171,4 +144,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+    func placeObject(){
+        sceneView.session.add(anchor: ARAnchor(transform: finalTransform!))
+    }
+    
+    func deletingObject(){
+       nodeModelChild.removeFromParentNode()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "ExploreModally"){
+            guard let destinationViewController = segue.destination as? ExploreMenuWithPopup else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            destinationViewController.newTag = newtag;
+            
+        }
+    }
+    
 }

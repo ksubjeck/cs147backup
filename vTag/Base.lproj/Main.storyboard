@@ -211,7 +211,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                        <segue destination="8pY-oU-G8Y" kind="presentation" identifier="ExploreModally" id="8Xk-e9-eOf"/>
+                        <segue destination="CxR-dC-Brv" kind="presentation" identifier="ExploreModally" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="uuM-uf-YqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -918,10 +918,10 @@
             </objects>
             <point key="canvasLocation" x="1705" y="-612"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore Menu With Popup-->
         <scene sceneID="szw-Yv-af1">
             <objects>
-                <viewController storyboardIdentifier="Explore Controller with Menu" id="CxR-dC-Brv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Explore Controller with Menu" id="CxR-dC-Brv" customClass="ExploreMenuWithPopup" customModule="vTag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcA-AH-nic">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -937,27 +937,28 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5Y-RT-G8d">
                                         <rect key="frame" x="8" y="257" width="75" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Tag Info"/>
+                                        <color key="backgroundColor" red="0.058823529409999999" green="0.44705882349999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Tag Info">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="editTag:" destination="Zaa-Bo-pbm" eventType="touchUpInside" id="PB5-oz-TUE"/>
+                                            <action selector="leftButtonPress:" destination="CxR-dC-Brv" eventType="touchUpInside" id="6OU-BZ-KAq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-Zt-GQS">
                                         <rect key="frame" x="91" y="257" width="141" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Mark As Completed"/>
+                                        <color key="backgroundColor" red="0.058823529409999999" green="0.44705882349999998" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Mark As Completed">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="markCompleted:" destination="Zaa-Bo-pbm" eventType="touchUpInside" id="J9v-Eh-aTO"/>
+                                            <action selector="rightButtonPress:" destination="CxR-dC-Brv" eventType="touchUpInside" id="5Wg-gk-UL5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tag Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlr-ha-oSi">
-                                        <rect key="frame" x="58" y="13" width="125" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xOR-6P-Iqd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VTag Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xOR-6P-Iqd">
                                         <rect key="frame" x="38" y="65" width="165" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -966,18 +967,33 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="pressedX:" destination="CxR-dC-Brv" eventType="touchUpInside" id="p64-p6-VfO"/>
+                                        </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tag Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASh-JF-hdm">
+                                        <rect key="frame" x="58" y="20" width="125" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="3NO-69-mlw"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="51H-ZX-68K"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="leftButton" destination="O5Y-RT-G8d" id="vxN-So-nnP"/>
+                        <outlet property="rightButton" destination="KMS-Zt-GQS" id="Rzk-2m-5mF"/>
+                        <outlet property="tagTitle" destination="ASh-JF-hdm" id="Ifc-zs-BwM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1D-Rp-ucx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zaa-Bo-pbm" userLabel="Exit" sceneMemberID="exit"/>
