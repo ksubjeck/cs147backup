@@ -14,7 +14,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var nodeModel:SCNNode!
-    let nodeName = "ship"
+    let nodeName = "ARTag"
     
     var nodeModelChild:SCNNode!
     var newtag = true;
@@ -45,7 +45,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
         
-        let tagScene = SCNScene(named: "art.scnassets/ship.scn")!
+        let tagScene = SCNScene(named: "art.scnassets/vTagARTag/vTagARTag.dae")!
         nodeModel = tagScene.rootNode.childNode(withName: nodeName, recursively: true);
         
     }
