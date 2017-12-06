@@ -45,7 +45,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
         
-        let tagScene = SCNScene(named: "art.scnassets/vTagARTag/vTagARTag.dae")!
+        let tagScene = SCNScene(named: "art.scnassets/collada/collda.dae")!
         nodeModel = tagScene.rootNode.childNode(withName: nodeName, recursively: true);
         
     }
