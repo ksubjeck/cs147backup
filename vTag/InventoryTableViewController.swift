@@ -13,7 +13,6 @@ class InventoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SharedData.sharedDataInstance.loadTags();
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -59,22 +58,6 @@ class InventoryTableViewController: UITableViewController {
         cell.PhotoImageView.image = tag.photo
 
         return cell
-    }
- 
-    
-    
-    private func loadTags(){
-        let photo1 = UIImage(named: "VTag Logo");
-        guard let tag1 = Tag(name: "Get VTag Working", photo: photo1, dateDue: "Thursday, Nov 30") else {
-            fatalError("Failed to instantiate tag1");
-        }
-        guard let tag2 = Tag(name: "Go to Practice", photo: photo1, dateDue: "Wednesday, Nov 29") else {
-            fatalError("Failed to instantiate tag2");
-        }
-        guard let tag3 = Tag(name: "Eat Dinner", photo: photo1, dateDue: "Wednesday, Nov 29") else {
-            fatalError("Failed to instantiate tag2");
-        }
-        SharedData.sharedDataInstance.tags += [tag1, tag2, tag3];
     }
 
     
@@ -123,7 +106,7 @@ class InventoryTableViewController: UITableViewController {
         transition.subtype = kCATransitionFromRight
         view.window!.layer.add(transition, forKey: kCATransition)
         dismiss(animated: false, completion: nil);
-        //dismiss(animated: true, completion: nil);
+        dismiss(animated: true, completion: nil);
     }
     
     

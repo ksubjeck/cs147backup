@@ -36,7 +36,7 @@ class AddFriendsListViewController: UITableViewController {
         return SharedData.sharedDataInstance.friends.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "AddFriendTableViewCell";
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AddFriendTableViewCell
             else {
@@ -48,5 +48,5 @@ class AddFriendsListViewController: UITableViewController {
         
         //cell.name.text = friend;
         //return cell
-    }
+    }*/
 }

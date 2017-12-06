@@ -2,27 +2,20 @@
 //  FriendsTableViewController.swift
 //  vTag
 //
-//  Created by Keaton Subjeck on 12/3/17.
+//  Created by Keaton Subjeck on 12/5/17.
 //  Copyright © 2017 VTag. All rights reserved.
 //
 
 import UIKit
-import os.log
 
 class FriendsTableViewController: UITableViewController {
+    //MARK: Properties
+    
+    var friends = [Friend]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData();
+        loadSampleFriends()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,25 +26,24 @@ class FriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return SharedData.sharedDataInstance.friends.count;
+        return friends.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "FriendsTableViewCell";
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FriendsTableViewCell
-        else {
-            fatalError("The dequeued cell is not an instance of friendsTableViewCell.")
+        let cellIdentifier = "FriendsTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FriendsTableViewCell else {
+            fatalError("The dequeued cell is not an instance of FriendsTableViewCell.")
         }
- 
-        let tag = SharedData.sharedDataInstance.friends[indexPath.row];
-        cell.name.text = tag;
+        
+        //Fetches the appropriate friend for the data source layout
+        let friend = friends[indexPath.row]
+        cell.nameLabel.text = friend.name
+        cell.photoImageView.image = friend.photo
 
         return cell
     }
@@ -92,23 +84,34 @@ class FriendsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        switch(segue.identifier ?? ""){
-        case "Send To Friend":
-            os_log("Going to Send To Friend view controller", log: OSLog.default, type: .debug)
-        default:
-            os_log("Unidentified Segue", log: OSLog.default,
-                   type: .debug)
-        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    */
     
+    // MARK: private methods
+    private func loadSampleFriends(){
+        let photo1 = UIImage(named: "friend1")
+        let photo2 = UIImage(named: "friend2")
+        let photo3 = UIImage(named: "friend3")
+        
+        guard let friend1 = Friend(name: "Keaton Subjeck", photo: photo1) else{
+            fatalError("Unable to instantiate friend1")
+        }
+        
+        guard let friend2 = Friend(name: "Cole Depo", photo: photo2) else {
+            fatalError("Unable to instantiate friend2")
+        }
+        
+        guard let friend3 = Friend(name: "Austin Flores", photo: photo3) else {
+            fatalError("Unable to instantiate friend3")
+        }
+        friends += [friend1, friend2, friend3]
+    }
 
 }
