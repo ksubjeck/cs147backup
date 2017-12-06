@@ -27,6 +27,7 @@ class ExploreMenuWithPopup: UIViewController {
                 SharedData.sharedDataInstance.tags.remove(at: index) //TODO FIX "tagname" to the inherited value from the explore interface as tag
                 
                 
+                
             }
         }
         

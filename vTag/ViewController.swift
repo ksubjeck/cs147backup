@@ -16,6 +16,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var nodeModel:SCNNode!
     let nodeName = "ship"
     
+    var nodeModelChild:SCNNode!
+    var completed = false
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white;
@@ -55,10 +60,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         hitTestOptions[SCNHitTestOption.boundingBoxOnly] = true
         let hitResults: [SCNHitTestResult]  = sceneView.hitTest(location, options: hitTestOptions)
         if let hit = hitResults.first {
-            if let node = getParent(hit.node) {
-                node.removeFromParentNode()
+            nodeModelChild = getParent(hit.node)
+            //if let node = getParent(hit.node) {
+                
+                
+                
+                
+                //node.removeFromParentNode() //TODO: if we comment this out and touch a tag in the world, does it stay there? IF yes, good.
                 return
-            }
+            //}
         }
         
         //Wants to add a tag and rotate to face you
@@ -108,8 +118,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -118,7 +126,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Run the view's session
         sceneView.session.run(configuration)
         
-       
+        if (completed && nodeModelChild != nil) {
+            nodeModelChild.removeFromParentNode()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

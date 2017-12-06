@@ -9,8 +9,10 @@
 import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var name: UILabel!
+    //MARK: Properties
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none;
