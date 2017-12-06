@@ -44,7 +44,9 @@ class FriendsTableViewController: UITableViewController {
         let friend = friends[indexPath.row]
         cell.nameLabel.text = friend.name
         cell.photoImageView.image = friend.photo
-
+        cell.photoImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
+        cell.photoImageView.contentMode = UIViewContentMode.scaleAspectFit
+        cell.photoImageView.clipsToBounds = true
         return cell
     }
     
@@ -84,15 +86,24 @@ class FriendsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "SendToFriend"){
+            print("kdog is here")
+            let popupViewController = segue.destination as? SendTagInformationViewController
+            let cell = sender as? FriendsTableViewCell
+            let buttonText = "Send tag to " + (cell?.nameLabel.text!)!
+            popupViewController?.buttonText = buttonText
+        }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
     
     // MARK: private methods
     private func loadSampleFriends(){
