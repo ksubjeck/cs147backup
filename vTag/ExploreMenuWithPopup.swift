@@ -49,8 +49,12 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-    
+    /**
+    * More Info to edit
+    * Tag info to see more about it
+    */
     @IBAction func leftButtonPress(_ sender: Any) {
+        
     }
     
     
@@ -60,9 +64,13 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
     @IBAction func rightButtonPress(_ sender: Any) {
         if let navigation = presentingViewController as? UINavigationController {
             if let presenter = navigation.viewControllers.first as? ViewController{
-                if(newTag){
+                if(newTag){ // Creating a new Tag!
+                    
                     presenter.placeObject();
-                } else {
+                    let tag = Tag(name: tagTitle.text!, photo: #imageLiteral(resourceName: "VTag Logo"), dateDue: "")
+                    SharedData.sharedDataInstance.tags.append(tag!);
+                } else { //Deleting Tag!
+                    
                     presenter.deletingObject();
                 }
             }

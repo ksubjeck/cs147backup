@@ -18,9 +18,10 @@ class Tag {
     
     init?(name: String, photo: UIImage?, dateDue: String){
         if(name.isEmpty){
-           return nil;
+           self.name = "Untitled";
+        } else {
+            self.name = name;
         }
-        self.name = name;
         self.photo = photo;
         self.dateDue = dateDue;
         self.dateMade = "Today" //Fix This later
