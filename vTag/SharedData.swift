@@ -12,6 +12,7 @@ class SharedData {
     var tags = [Tag](); //array of tags
     var friends = ["Mom", "BFF", "Tom Petty", "Burt Reynolds", "Kdog", "Cardi B", "Abraham Lincoln"];
     var friendRequests = ["Django", "Jennifer", "Morgan Freeman"];
+    var sentTags = [Tag]();
     
     func loadTags(){
         let photo1 = UIImage(named: "VTag Logo");
