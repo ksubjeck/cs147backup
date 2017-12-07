@@ -177,7 +177,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             guard let destinationViewController = segue.destination as? ExploreMenuWithPopup else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            
+            destinationViewController.currTag = currTag;
             destinationViewController.newTag = newtag;
             
         }

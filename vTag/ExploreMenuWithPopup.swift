@@ -15,6 +15,7 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var rightButton: UIButton!
     //private instance variables
     var newTag = false;
+    var currTag: Tag?
     
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
             rightButton.frame.origin = CGPoint(x: 120, y: 257)
                 
         } else {
-           // tagTitle.text = 
+            tagTitle.text = currTag?.name;
         }
     }
 

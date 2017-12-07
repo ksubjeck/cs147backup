@@ -13,11 +13,13 @@ class ExploreViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tagName: UITextField!
     @IBOutlet weak var tagPhoto: UIImageView!
     @IBOutlet weak var tagDate: UIDatePicker!
+    var tag: Tag?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         self.tagName.delegate = self;
+        tagName.text = tag?.name;
         
         // Do any additional setup after loading the view.
     }
