@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		662899381FD6620100111EAC /* AddFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899371FD6620100111EAC /* AddFriendsListViewController.swift */; };
 		6628993A1FD6621E00111EAC /* AddFriendsListViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899391FD6621E00111EAC /* AddFriendsListViewControllerCell.swift */; };
+		662899701FD9199700111EAC /* SentTagInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628996C1FD9199600111EAC /* SentTagInfoViewController.swift */; };
+		662899711FD9199700111EAC /* SentTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628996D1FD9199600111EAC /* SentTagTableViewCell.swift */; };
+		662899721FD9199700111EAC /* SentTagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628996E1FD9199600111EAC /* SentTagTableViewController.swift */; };
 		6643DA671FD60CB300823D61 /* ExploreMenuWithPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */; };
 		66BA1D0D1FD0D80200B506D2 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA1D0C1FD0D80200B506D2 /* SharedData.swift */; };
 		D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */; };
@@ -47,6 +50,9 @@
 /* Begin PBXFileReference section */
 		662899371FD6620100111EAC /* AddFriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsListViewController.swift; sourceTree = "<group>"; };
 		662899391FD6621E00111EAC /* AddFriendsListViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsListViewControllerCell.swift; sourceTree = "<group>"; };
+		6628996C1FD9199600111EAC /* SentTagInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentTagInfoViewController.swift; sourceTree = "<group>"; };
+		6628996D1FD9199600111EAC /* SentTagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentTagTableViewCell.swift; sourceTree = "<group>"; };
+		6628996E1FD9199600111EAC /* SentTagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentTagTableViewController.swift; sourceTree = "<group>"; };
 		6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreMenuWithPopup.swift; sourceTree = "<group>"; };
 		66BA1D0C1FD0D80200B506D2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				D95965591FCF5F47004CEBE4 /* Tag.swift */,
 				D95965571FCF50CB004CEBE4 /* InventoryTableViewController.swift */,
 				D95965551FCF4ADB004CEBE4 /* InventoryTableViewCell.swift */,
+				6628996C1FD9199600111EAC /* SentTagInfoViewController.swift */,
+				6628996D1FD9199600111EAC /* SentTagTableViewCell.swift */,
+				6628996E1FD9199600111EAC /* SentTagTableViewController.swift */,
 				D95965531FCE8F75004CEBE4 /* SegueFromLeft.swift */,
 				D95965511FCE665E004CEBE4 /* ExploreViewController.swift */,
 				F921F3A01FD4EB9E0057E15C /* SendTagInformationViewController.swift */,
@@ -262,6 +271,7 @@
 				D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */,
 				F92F3EDB1FD8861D00456A04 /* AddFriendsTableViewCell.swift in Sources */,
 				D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */,
+				662899711FD9199700111EAC /* SentTagTableViewCell.swift in Sources */,
 				F92F3ED21FD501D300456A04 /* FriendsTableViewCell.swift in Sources */,
 				D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */,
 				F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */,
@@ -271,8 +281,10 @@
 				6643DA671FD60CB300823D61 /* ExploreMenuWithPopup.swift in Sources */,
 				D95965561FCF4ADB004CEBE4 /* InventoryTableViewCell.swift in Sources */,
 				66BA1D0D1FD0D80200B506D2 /* SharedData.swift in Sources */,
+				662899721FD9199700111EAC /* SentTagTableViewController.swift in Sources */,
 				F92F3ED71FD74B0200456A04 /* FriendsTableViewController.swift in Sources */,
 				D959655A1FCF5F47004CEBE4 /* Tag.swift in Sources */,
+				662899701FD9199700111EAC /* SentTagInfoViewController.swift in Sources */,
 				D97C52C31FC3F09300B943F5 /* AppDelegate.swift in Sources */,
 				F92F3ED91FD74C2700456A04 /* Friend.swift in Sources */,
 				662899381FD6620100111EAC /* AddFriendsListViewController.swift in Sources */,
