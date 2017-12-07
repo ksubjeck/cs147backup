@@ -97,14 +97,24 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
 //        //need to inherit the tag from the Explore interface to obtain the actual tagName
 //    }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "More Info":
+            
+            guard let destinationViewController = segue.destination as? ExploreViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            let tag = Tag(name: tagTitle.text!, photo: #imageLiteral(resourceName: "VTag Logo"), dateDue: "")
+            destinationViewController.tag = tag
+            
+        default:
+            print("Wrong Segue")
+            
+            
+        }
     }
-    */
 
 }

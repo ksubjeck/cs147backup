@@ -924,7 +924,6 @@
         <!--Navigation Controller-->
         <scene sceneID="pM3-fN-wfN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O7Y-qt-SgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q3s-Ea-tfE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ErL-WK-BZa">
@@ -937,6 +936,7 @@
                         <segue destination="vjT-HY-IJE" kind="relationship" relationship="rootViewController" id="dOm-AP-FHb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7Y-qt-SgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1705" y="-612"/>
         </scene>
@@ -966,7 +966,7 @@
                                         <connections>
                                             <action selector="editTag:" destination="Zaa-Bo-pbm" eventType="touchUpInside" id="PB5-oz-TUE"/>
                                             <action selector="leftButtonPress:" destination="CxR-dC-Brv" eventType="touchUpInside" id="6OU-BZ-KAq"/>
-                                            <segue destination="8pY-oU-G8Y" kind="presentation" id="O7W-nR-iCZ"/>
+                                            <segue destination="8pY-oU-G8Y" kind="presentation" identifier="More Info" id="O7W-nR-iCZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMS-Zt-GQS">
@@ -1345,6 +1345,6 @@
         <image name="defaultPhoto" width="188" height="188"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U3B-xJ-fYM"/>
+        <segue reference="ulB-58-Kpt"/>
     </inferredMetricsTieBreakers>
 </document>
