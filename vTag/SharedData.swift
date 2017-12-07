@@ -6,6 +6,7 @@
 //  Copyright © 2017 VTag. All rights reserved.
 //
 import UIKit
+import ARKit
 
 class SharedData {
     static let sharedDataInstance = SharedData();
@@ -13,6 +14,7 @@ class SharedData {
     var friends = ["Mom", "BFF", "Tom Petty", "Burt Reynolds", "Kdog", "Cardi B", "Abraham Lincoln"];
     var friendRequests = ["Django", "Jennifer", "Morgan Freeman"];
     var sentTags = [Tag]();
+    var nodes = [SCNNode: Tag]();
     
     func loadTags(){
         let photo1 = UIImage(named: "VTag Logo");

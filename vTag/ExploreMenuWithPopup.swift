@@ -30,6 +30,8 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
             rightButton.frame.size.width = 110;
             rightButton.frame.origin = CGPoint(x: 120, y: 257)
                 
+        } else {
+           // tagTitle.text = 
         }
     }
 
@@ -66,11 +68,12 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
             if let presenter = navigation.viewControllers.first as? ViewController{
                 if(newTag){ // Creating a new Tag!
                     
-                    presenter.placeObject();
+                    tagTitle.isUserInteractionEnabled = true;
                     let tag = Tag(name: tagTitle.text!, photo: #imageLiteral(resourceName: "VTag Logo"), dateDue: "")
-                    SharedData.sharedDataInstance.tags.append(tag!);
+                    presenter.placeObject(tag: tag!);
                 } else { //Deleting Tag!
                     
+                    tagTitle.isUserInteractionEnabled = false;
                     presenter.deletingObject();
                 }
             }
