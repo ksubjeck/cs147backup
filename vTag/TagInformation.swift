@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARKit
 
 class TagInformation: UIViewController, UITextFieldDelegate {
 
@@ -40,8 +41,7 @@ class TagInformation: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         name.text = tag?.name;
         photo.image = tag?.photo;
-        
-        //dueDate = ;
+
         
         for(location, tag) in SharedData.sharedDataInstance.tags.enumerated(){
             if(tag.name == name.text){
@@ -108,6 +108,11 @@ class TagInformation: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tagCompleted(_ sender: Any) {
+        for (node, currTag) in SharedData.sharedDataInstance.nodes{
+            if(tag?.name == currTag.name){
+                node.removeFromParentNode();
+            }
+        }
         SharedData.sharedDataInstance.tags.remove(at: index!);
         self.navigationController?.popViewController(animated: true);
     }
