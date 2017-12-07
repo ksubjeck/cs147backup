@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		662899381FD6620100111EAC /* AddFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899371FD6620100111EAC /* AddFriendsListViewController.swift */; };
-<<<<<<< HEAD
 		6628993E1FD87E5E00111EAC /* SentTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628993D1FD87E5E00111EAC /* SentTagTableViewCell.swift */; };
 		662899401FD885F600111EAC /* SentTagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628993F1FD885F600111EAC /* SentTagTableViewController.swift */; };
 		662899421FD88DD500111EAC /* SentTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899411FD88DD500111EAC /* SentTag.swift */; };
 		662899481FD8E97D00111EAC /* SentTagInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899471FD8E97D00111EAC /* SentTagInfoViewController.swift */; };
-=======
 		6628993A1FD6621E00111EAC /* AddFriendsListViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662899391FD6621E00111EAC /* AddFriendsListViewControllerCell.swift */; };
->>>>>>> 38e4ae37396d2b02a58625f284a830032ccef99a
 		6643DA671FD60CB300823D61 /* ExploreMenuWithPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */; };
 		66BA1D0D1FD0D80200B506D2 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA1D0C1FD0D80200B506D2 /* SharedData.swift */; };
 		D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */; };
@@ -53,14 +50,11 @@
 
 /* Begin PBXFileReference section */
 		662899371FD6620100111EAC /* AddFriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsListViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		6628993D1FD87E5E00111EAC /* SentTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTagTableViewCell.swift; sourceTree = "<group>"; };
 		6628993F1FD885F600111EAC /* SentTagTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTagTableViewController.swift; sourceTree = "<group>"; };
 		662899411FD88DD500111EAC /* SentTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTag.swift; sourceTree = "<group>"; };
 		662899471FD8E97D00111EAC /* SentTagInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentTagInfoViewController.swift; sourceTree = "<group>"; };
-=======
 		662899391FD6621E00111EAC /* AddFriendsListViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsListViewControllerCell.swift; sourceTree = "<group>"; };
->>>>>>> 38e4ae37396d2b02a58625f284a830032ccef99a
 		6643DA661FD60CB300823D61 /* ExploreMenuWithPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreMenuWithPopup.swift; sourceTree = "<group>"; };
 		66BA1D0C1FD0D80200B506D2 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		D959654D1FCE61DA004CEBE4 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -275,11 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95965541FCE8F75004CEBE4 /* SegueFromLeft.swift in Sources */,
-<<<<<<< HEAD
 				662899421FD88DD500111EAC /* SentTag.swift in Sources */,
-=======
 				F92F3EDD1FD886AD00456A04 /* AddFriendsTableViewController.swift in Sources */,
->>>>>>> 38e4ae37396d2b02a58625f284a830032ccef99a
 				D97C52C71FC3F09300B943F5 /* ViewController.swift in Sources */,
 				F92F3EDB1FD8861D00456A04 /* AddFriendsTableViewCell.swift in Sources */,
 				D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */,
