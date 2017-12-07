@@ -35,6 +35,7 @@
 		F92F3ED91FD74C2700456A04 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F3ED81FD74C2700456A04 /* Friend.swift */; };
 		F92F3EDB1FD8861D00456A04 /* AddFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F3EDA1FD8861D00456A04 /* AddFriendsTableViewCell.swift */; };
 		F92F3EDD1FD886AD00456A04 /* AddFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F3EDC1FD886AD00456A04 /* AddFriendsTableViewController.swift */; };
+		F92F3EE11FD8934400456A04 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92F3EE01FD8934400456A04 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		F92F3ED81FD74C2700456A04 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F92F3EDA1FD8861D00456A04 /* AddFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewCell.swift; sourceTree = "<group>"; };
 		F92F3EDC1FD886AD00456A04 /* AddFriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewController.swift; sourceTree = "<group>"; };
+		F92F3EE01FD8934400456A04 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				F92F3ED11FD501D300456A04 /* FriendsTableViewCell.swift */,
 				F92F3ED61FD74B0200456A04 /* FriendsTableViewController.swift */,
 				F92F3ED81FD74C2700456A04 /* Friend.swift */,
+				F92F3EE01FD8934400456A04 /* Contact.swift */,
 			);
 			path = vTag;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				D95965581FCF50CB004CEBE4 /* InventoryTableViewController.swift in Sources */,
 				662899711FD9199700111EAC /* SentTagTableViewCell.swift in Sources */,
 				F92F3ED21FD501D300456A04 /* FriendsTableViewCell.swift in Sources */,
+				F92F3EE11FD8934400456A04 /* Contact.swift in Sources */,
 				D959654E1FCE61DA004CEBE4 /* InventoryViewController.swift in Sources */,
 				F921F3A11FD4EB9E0057E15C /* SendTagInformationViewController.swift in Sources */,
 				6628993A1FD6621E00111EAC /* AddFriendsListViewControllerCell.swift in Sources */,

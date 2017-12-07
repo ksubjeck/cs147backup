@@ -27,6 +27,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         SharedData.sharedDataInstance.loadTags();
+        SharedData.sharedDataInstance.loadContacts();
+        SharedData.sharedDataInstance.loadSentTags();
+        SharedData.sharedDataInstance.loadSampleFriends();
         
         // Set the view's delegate
         sceneView.delegate = self
