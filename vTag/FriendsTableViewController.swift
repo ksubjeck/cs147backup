@@ -11,14 +11,13 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     //MARK: Properties
     
-    var friends = [Friend]()
+    var friends = SharedData.sharedDataInstance.friends;
 
     @IBAction func backToExplore(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleFriends()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,26 +67,4 @@ class FriendsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
     }
-    
-    
-    // MARK: private methods
-    private func loadSampleFriends(){
-        let photo1 = UIImage(named: "friend1")
-        let photo2 = UIImage(named: "friend2")
-        let photo3 = UIImage(named: "friend3")
-        
-        guard let friend1 = Friend(name: "Keaton Subjeck", photo: photo1) else{
-            fatalError("Unable to instantiate friend1")
-        }
-        
-        guard let friend2 = Friend(name: "Cole Depo", photo: photo2) else {
-            fatalError("Unable to instantiate friend2")
-        }
-        
-        guard let friend3 = Friend(name: "Austin Flores", photo: photo3) else {
-            fatalError("Unable to instantiate friend3")
-        }
-        friends += [friend1, friend2, friend3]
-    }
-
 }

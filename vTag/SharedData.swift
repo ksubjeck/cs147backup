@@ -11,10 +11,10 @@ import ARKit
 class SharedData {
     static let sharedDataInstance = SharedData();
     var tags = [Tag](); //array of tags
-    var friends = ["Mom", "BFF", "Tom Petty", "Burt Reynolds", "Kdog", "Cardi B", "Abraham Lincoln"];
     var friendRequests = ["Django", "Jennifer", "Morgan Freeman"];
     var sentTags = [Tag]();
     var contacts = [Contact]();
+    var friends = [Friend]();
     var nodes = [SCNNode: Tag]();
     
     func loadTags(){
@@ -65,5 +65,24 @@ class SharedData {
         }
         
         self.sentTags += [firstSentTag, secondSentTag, thirdSentTag]
+    }
+    
+    func loadSampleFriends(){
+        let photo1 = UIImage(named: "friend1")
+        let photo2 = UIImage(named: "friend2")
+        let photo3 = UIImage(named: "friend3")
+        
+        guard let friend1 = Friend(name: "Keaton Subjeck", photo: photo1) else{
+            fatalError("Unable to instantiate friend1")
+        }
+        
+        guard let friend2 = Friend(name: "Cole Depo", photo: photo2) else {
+            fatalError("Unable to instantiate friend2")
+        }
+        
+        guard let friend3 = Friend(name: "Austin Flores", photo: photo3) else {
+            fatalError("Unable to instantiate friend3")
+        }
+        friends += [friend1, friend2, friend3]
     }
 }
