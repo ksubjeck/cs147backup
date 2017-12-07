@@ -15,6 +15,7 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var rightButton: UIButton!
     //private instance variables
     var newTag = false;
+    var currTag: Tag?
     
     
     override func viewDidLoad() {
@@ -30,6 +31,8 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
             rightButton.frame.size.width = 110;
             rightButton.frame.origin = CGPoint(x: 120, y: 257)
                 
+        } else {
+            tagTitle.text = currTag?.name;
         }
     }
 
@@ -66,11 +69,12 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
             if let presenter = navigation.viewControllers.first as? ViewController{
                 if(newTag){ // Creating a new Tag!
                     
-                    presenter.placeObject();
+                    tagTitle.isUserInteractionEnabled = true;
                     let tag = Tag(name: tagTitle.text!, photo: #imageLiteral(resourceName: "VTag Logo"), dateDue: "")
-                    SharedData.sharedDataInstance.tags.append(tag!);
+                    presenter.placeObject(tag: tag!);
                 } else { //Deleting Tag!
                     
+                    tagTitle.isUserInteractionEnabled = false;
                     presenter.deletingObject();
                 }
             }
@@ -93,14 +97,24 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
 //        //need to inherit the tag from the Explore interface to obtain the actual tagName
 //    }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "More Info":
+            
+            guard let destinationViewController = segue.destination as? ExploreViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            let tag = Tag(name: tagTitle.text!, photo: #imageLiteral(resourceName: "VTag Logo"), dateDue: "")
+            destinationViewController.tag = tag
+            
+        default:
+            print("Wrong Segue")
+            
+            
+        }
     }
-    */
 
 }

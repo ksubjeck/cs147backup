@@ -19,6 +19,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var nodeModelChild:SCNNode!
     var newtag = true;
     var finalTransform: simd_float4x4?
+    var currTag: Tag?
     
     
     
@@ -27,6 +28,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         SharedData.sharedDataInstance.loadTags();
         SharedData.sharedDataInstance.loadContacts();
+        SharedData.sharedDataInstance.loadSentTags()
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -66,6 +68,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             newtag = false; //Touching an existing tag
             if let node = getParent(hit.node) {
                 nodeModelChild = node;
+                for(currNode, thisTag) in SharedData.sharedDataInstance.nodes {
+                    if(currNode == node){
+                        currTag = thisTag;
+                        break;
+                    }
+                }
                 //node.removeFromParentNode() //removes node here and now
                 performSegue(withIdentifier: "ExploreModally", sender: nil)
                 return
@@ -110,6 +118,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 
                 // Add model as a child of the node
                 node.addChildNode(modelClone)
+                SharedData.sharedDataInstance.nodes[modelClone] = self.currTag;
+                //SharedData.sharedDataInstance.nodes.append(node.childNode(withName: self.nodeName, recursively: true)!);
             }
         }
     }
@@ -148,12 +158,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
-    func placeObject(){
+    func placeObject(tag: Tag){
         sceneView.session.add(anchor: ARAnchor(transform: finalTransform!))
+        currTag = tag;
+        SharedData.sharedDataInstance.tags.append(tag);
     }
     
     func deletingObject(){
        nodeModelChild.removeFromParentNode()
+        for(location, tag) in SharedData.sharedDataInstance.tags.enumerated(){
+            if(tag.name == currTag?.name){
+                SharedData.sharedDataInstance.tags.remove(at: location);
+                break;
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -161,7 +179,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             guard let destinationViewController = segue.destination as? ExploreMenuWithPopup else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            
+            destinationViewController.currTag = currTag;
             destinationViewController.newTag = newtag;
             
         }

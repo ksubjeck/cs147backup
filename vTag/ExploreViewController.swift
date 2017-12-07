@@ -13,11 +13,13 @@ class ExploreViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tagName: UITextField!
     @IBOutlet weak var tagPhoto: UIImageView!
     @IBOutlet weak var tagDate: UIDatePicker!
+    var tag: Tag?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         self.tagName.delegate = self;
+        tagName.text = tag?.name;
         
         // Do any additional setup after loading the view.
     }
@@ -58,10 +60,21 @@ class ExploreViewController: UIViewController, UITextFieldDelegate {
         
         let currTag = Tag(name: tagName.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate);
         
-        SharedData.sharedDataInstance.tags.append(currTag!);
+        
+        //Popping viewcontroller and setting it
+        if let navigation = presentingViewController?.presentingViewController as? UINavigationController {
+            if let presenter = navigation.viewControllers.first as? ViewController{
+                presenter.placeObject(tag: currTag!);
+            }
+        }
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        
+        //SharedData.sharedDataInstance.tags.append(currTag!);
 
         
-        dismiss(animated: true, completion: nil);
+        //dismiss(animated: true, completion: nil);
         //self.navigationController?.popViewController(animated: true);
     }
 }

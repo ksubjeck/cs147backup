@@ -6,6 +6,7 @@
 //  Copyright © 2017 VTag. All rights reserved.
 //
 import UIKit
+import ARKit
 
 class SharedData {
     static let sharedDataInstance = SharedData();
@@ -14,6 +15,7 @@ class SharedData {
     var friendRequests = ["Django", "Jennifer", "Morgan Freeman"];
     var sentTags = [Tag]();
     var contacts = [Contact]();
+    var nodes = [SCNNode: Tag]();
     
     func loadTags(){
         let photo1 = UIImage(named: "VTag Logo");
@@ -45,7 +47,23 @@ class SharedData {
         }
         self.contacts += [contact1, contact2, contact3, contact4];
     }
+        
+    func loadSentTags() {
+        
+        let photo1 = UIImage(named: "sentTag1");
+        let photo2 = UIImage(named: "sentTag2");
+        let photo3 = UIImage(named: "sentTag3");
+        
+        guard let firstSentTag = Tag(name: "Call BFF", photo: photo1, dateDue: "12-31-2017", creator: "Me", recipient: "BFF") else {
+            fatalError("Unable to instantiate firstSentTag")
+        }
+        guard let secondSentTag = Tag(name: "Meet me at Starbucks", photo: photo2, dateDue: "01-07-2018", creator: "Me", recipient: "Abraham Lincoln") else {
+            fatalError("Unable to instantiate firstSentTag")
+        }
+        guard let thirdSentTag = Tag(name: "The meatloaf!", photo: photo3, dateDue: "02-16-2018", creator: "Me", recipient: "Mom") else {
+            fatalError("Unable to instantiate firstSentTag")
+        }
+        
+        self.sentTags += [firstSentTag, secondSentTag, thirdSentTag]
+    }
 }
-
-
-
