@@ -45,6 +45,9 @@ class SendTagInformationViewController: UIViewController {
         SharedData.sharedDataInstance.sentTags.append(currTag!);
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func cancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
