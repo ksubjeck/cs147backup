@@ -1031,7 +1031,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-j5-ScI">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-j5-ScI">
                                 <rect key="frame" x="87" y="116" width="200" height="94.5"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -1047,7 +1047,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw1-cM-xj6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw1-cM-xj6">
                                 <rect key="frame" x="113" y="83" width="149" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1099,7 +1099,7 @@
                             <constraint firstItem="3pt-rk-YVL" firstAttribute="leading" secondItem="GDL-PZ-mOX" secondAttribute="leading" constant="113" id="IFD-TB-W51"/>
                             <constraint firstItem="GDL-PZ-mOX" firstAttribute="trailing" secondItem="vm2-eK-M5R" secondAttribute="trailing" constant="88" id="LHg-Go-x1p"/>
                             <constraint firstItem="3pt-rk-YVL" firstAttribute="top" secondItem="EXY-sK-5hh" secondAttribute="bottom" constant="21" id="Mrt-yV-70p"/>
-                            <constraint firstItem="7aZ-j5-ScI" firstAttribute="top" secondItem="uw1-cM-xj6" secondAttribute="bottom" constant="8" id="Ty3-6t-8Zx"/>
+                            <constraint firstItem="7aZ-j5-ScI" firstAttribute="top" secondItem="uw1-cM-xj6" secondAttribute="bottom" constant="3" id="Ty3-6t-8Zx"/>
                             <constraint firstItem="vm2-eK-M5R" firstAttribute="top" secondItem="Fdv-DZ-xTW" secondAttribute="bottom" constant="51" id="dYW-TK-GHb"/>
                             <constraint firstItem="GDL-PZ-mOX" firstAttribute="trailing" secondItem="uw1-cM-xj6" secondAttribute="trailing" constant="113" id="ffm-vy-LZF"/>
                             <constraint firstItem="vm2-eK-M5R" firstAttribute="leading" secondItem="GDL-PZ-mOX" secondAttribute="leading" constant="87" id="fqx-hh-5pw"/>
@@ -1107,7 +1107,7 @@
                             <constraint firstItem="7aZ-j5-ScI" firstAttribute="leading" secondItem="GDL-PZ-mOX" secondAttribute="leading" constant="87" id="mck-C5-1Tt"/>
                             <constraint firstItem="EXY-sK-5hh" firstAttribute="leading" secondItem="GDL-PZ-mOX" secondAttribute="leading" constant="96" id="xH7-Pk-bQ7"/>
                             <constraint firstItem="Fdv-DZ-xTW" firstAttribute="top" secondItem="3pt-rk-YVL" secondAttribute="bottom" constant="8" id="yDu-Pa-fcM"/>
-                            <constraint firstItem="uw1-cM-xj6" firstAttribute="top" secondItem="GDL-PZ-mOX" secondAttribute="top" constant="14" id="zGY-RR-1tZ"/>
+                            <constraint firstItem="uw1-cM-xj6" firstAttribute="top" secondItem="GDL-PZ-mOX" secondAttribute="top" constant="19" id="zGY-RR-1tZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GDL-PZ-mOX"/>
                     </view>
@@ -1134,7 +1134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wj-Uq-37q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705" y="994"/>
+            <point key="canvasLocation" x="1704.8" y="993.55322338830592"/>
         </scene>
         <!--Send Tag-->
         <scene sceneID="ikf-Kz-J2N">

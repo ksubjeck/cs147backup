@@ -60,10 +60,21 @@ class ExploreViewController: UIViewController, UITextFieldDelegate {
         
         let currTag = Tag(name: tagName.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate);
         
-        SharedData.sharedDataInstance.tags.append(currTag!);
+        
+        //Popping viewcontroller and setting it
+        if let navigation = presentingViewController?.presentingViewController as? UINavigationController {
+            if let presenter = navigation.viewControllers.first as? ViewController{
+                presenter.placeObject(tag: currTag!);
+            }
+        }
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        
+        //SharedData.sharedDataInstance.tags.append(currTag!);
 
         
-        dismiss(animated: true, completion: nil);
+        //dismiss(animated: true, completion: nil);
         //self.navigationController?.popViewController(animated: true);
     }
 }
