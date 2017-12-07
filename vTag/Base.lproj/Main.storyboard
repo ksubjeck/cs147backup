@@ -128,7 +128,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-0d-a3l">
-                                <rect key="frame" x="126" y="564" width="123" height="36"/>
+                                <rect key="frame" x="88" y="564" width="199" height="36"/>
                                 <color key="backgroundColor" red="0.21176470588235294" green="0.52941176470588236" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Set tag">
@@ -145,6 +145,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkX-jC-Tg6">
+                                <rect key="frame" x="16" y="32" width="86" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="tmG-vT-2HK" eventType="touchUpInside" id="uDq-f0-ERm"/>
+                                    <action selector="pressedX:" destination="8pY-oU-G8Y" eventType="touchUpInside" id="wHL-eF-Ass"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -153,12 +162,12 @@
                             <constraint firstItem="60v-W3-25E" firstAttribute="trailing" secondItem="Kt2-nT-JUN" secondAttribute="trailing" constant="53" id="F7M-AV-m5C"/>
                             <constraint firstItem="yZM-ym-APD" firstAttribute="leading" secondItem="60v-W3-25E" secondAttribute="leading" constant="113" id="FNI-q4-Tl7"/>
                             <constraint firstItem="MZM-J1-MTC" firstAttribute="top" secondItem="yZM-ym-APD" secondAttribute="bottom" constant="8" id="Hh4-JK-pPM"/>
-                            <constraint firstItem="Oan-0d-a3l" firstAttribute="leading" secondItem="60v-W3-25E" secondAttribute="leading" constant="126" id="Jwa-Tm-MdH"/>
+                            <constraint firstItem="Oan-0d-a3l" firstAttribute="leading" secondItem="60v-W3-25E" secondAttribute="leading" constant="88" id="Jwa-Tm-MdH"/>
                             <constraint firstItem="60v-W3-25E" firstAttribute="trailing" secondItem="yZM-ym-APD" secondAttribute="trailing" constant="113" id="OdO-Pz-ef3"/>
                             <constraint firstItem="60v-W3-25E" firstAttribute="trailing" secondItem="MZM-J1-MTC" secondAttribute="trailing" constant="88" id="RYe-JL-2sm"/>
                             <constraint firstItem="MZM-J1-MTC" firstAttribute="leading" secondItem="60v-W3-25E" secondAttribute="leading" constant="87" id="TfI-Ip-oJb"/>
                             <constraint firstItem="60v-W3-25E" firstAttribute="bottom" secondItem="Oan-0d-a3l" secondAttribute="bottom" constant="23" id="V7x-xi-8CK"/>
-                            <constraint firstItem="60v-W3-25E" firstAttribute="trailing" secondItem="Oan-0d-a3l" secondAttribute="trailing" constant="126" id="ekq-xx-bRQ"/>
+                            <constraint firstItem="60v-W3-25E" firstAttribute="trailing" secondItem="Oan-0d-a3l" secondAttribute="trailing" constant="88" id="ekq-xx-bRQ"/>
                             <constraint firstItem="Kt2-nT-JUN" firstAttribute="leading" secondItem="60v-W3-25E" secondAttribute="leading" constant="52" id="f76-PX-AN2"/>
                             <constraint firstItem="WDi-Dm-myc" firstAttribute="top" secondItem="EiV-PD-Hhb" secondAttribute="bottom" constant="21" id="gK7-bV-39W"/>
                             <constraint firstItem="60v-W3-25E" firstAttribute="trailing" secondItem="EiV-PD-Hhb" secondAttribute="trailing" constant="96" id="hdW-rF-WaF"/>
@@ -178,6 +187,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomButton" destination="Oan-0d-a3l" id="HKi-mS-NSb"/>
                         <outlet property="tagDate" destination="Kt2-nT-JUN" id="oYB-11-D3o"/>
                         <outlet property="tagName" destination="yZM-ym-APD" id="9rC-gI-ztG"/>
                         <outlet property="tagPhoto" destination="MZM-J1-MTC" id="UlB-nw-qvZ"/>
@@ -185,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Beu-vx-r9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2886" y="1794"/>
+            <point key="canvasLocation" x="2885.5999999999999" y="1793.2533733133434"/>
         </scene>
         <!--AR Controller-->
         <scene sceneID="tXr-a1-R10">

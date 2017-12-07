@@ -33,6 +33,7 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
                 
         } else {
             tagTitle.text = currTag?.name;
+            tagTitle.isUserInteractionEnabled = false;
         }
     }
 
@@ -109,6 +110,12 @@ class ExploreMenuWithPopup: UIViewController, UITextFieldDelegate {
             }
             let tag = Tag(name: tagTitle.text!, photo: #imageLiteral(resourceName: "VTag Logo"), dateDue: "")
             destinationViewController.tag = tag
+            
+            if(newTag){
+                destinationViewController.newTag = true;
+            } else {
+                destinationViewController.newTag = false;
+            }
             
         default:
             print("Wrong Segue")

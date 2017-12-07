@@ -13,15 +13,20 @@ class ExploreViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tagName: UITextField!
     @IBOutlet weak var tagPhoto: UIImageView!
     @IBOutlet weak var tagDate: UIDatePicker!
+    @IBOutlet weak var bottomButton: UIButton!
     var tag: Tag?;
+    var newTag: Bool?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.white;
         self.tagName.delegate = self;
         tagName.text = tag?.name;
+        if(!newTag!){
+            bottomButton.setTitle("Mark As Completed", for: .normal);
+        }
         
-        // Do any additional setup after loading the view.
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,48 +38,44 @@ class ExploreViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func pressedX(_ sender: Any) {
+        dismiss(animated: true, completion: nil);
     }
-    */
+    
 
     @IBAction func setTag(_ sender: Any) {
-        let date = self.tagDate.date
-
-        let formatter = DateFormatter();
-        formatter.dateFormat = "MM-dd-yyy, HH:mm:ss";
-        let myString = formatter.string(from: date);
-        let yourDate = formatter.date(from: myString);
-        formatter.dateFormat = "MM-dd-yyyy"; // again convert your date to string
-        let myDate = formatter.string(from: yourDate!);
-        
-        if (tagName.text == "") {
-           tagName.text = "Untitled";
-        }
-        
-        let currTag = Tag(name: tagName.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate);
-        
-        
-        //Popping viewcontroller and setting it
-        if let navigation = presentingViewController?.presentingViewController as? UINavigationController {
-            if let presenter = navigation.viewControllers.first as? ViewController{
-                presenter.placeObject(tag: currTag!);
+        if(newTag)!{
+            let date = self.tagDate.date
+            
+            let formatter = DateFormatter();
+            formatter.dateFormat = "MM-dd-yyy, HH:mm:ss";
+            let myString = formatter.string(from: date);
+            let yourDate = formatter.date(from: myString);
+            formatter.dateFormat = "MM-dd-yyyy"; // again convert your date to string
+            let myDate = formatter.string(from: yourDate!);
+            
+            let currTag = Tag(name: tagName.text!, photo: UIImage(named: "VTag Logo"), dateDue: myDate);
+            
+            
+            //Popping viewcontroller and setting it
+            if let navigation = presentingViewController?.presentingViewController as? UINavigationController {
+                if let presenter = navigation.viewControllers.first as? ViewController{
+                    presenter.placeObject(tag: currTag!);
+                }
+            }
+        } else {
+            for(location, currTag) in SharedData.sharedDataInstance.tags.enumerated(){
+                if(tag?.name == currTag.name){
+                    SharedData.sharedDataInstance.tags.remove(at: location);
+                }
+            }
+            for (node, currTag) in SharedData.sharedDataInstance.nodes{
+                if(tag?.name == currTag.name){
+                    node.removeFromParentNode();
+                }
             }
         }
         self.presentingViewController?.dismiss(animated: false, completion: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-        
-        
-        //SharedData.sharedDataInstance.tags.append(currTag!);
-
-        
-        //dismiss(animated: true, completion: nil);
-        //self.navigationController?.popViewController(animated: true);
     }
 }
