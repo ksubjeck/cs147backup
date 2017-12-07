@@ -13,6 +13,7 @@ class SharedData {
     var friends = ["Mom", "BFF", "Tom Petty", "Burt Reynolds", "Kdog", "Cardi B", "Abraham Lincoln"];
     var friendRequests = ["Django", "Jennifer", "Morgan Freeman"];
     var sentTags = [Tag]();
+    var contacts = [Contact]();
     
     func loadTags(){
         let photo1 = UIImage(named: "VTag Logo");
@@ -26,6 +27,23 @@ class SharedData {
             fatalError("Failed to instantiate tag2");
         }
         self.tags += [tag1, tag2, tag3];
+    }
+    
+    func loadContacts(){
+        print("Loading these fucking contacts")
+        guard let contact1 = Contact(name: "Elon Musk", accepted: false) else{
+            fatalError("Failed to instantiate contact1");
+        }
+        guard let contact2 = Contact(name: "Jerry Cain", accepted: false) else{
+            fatalError("Failed to instantiate contact2");
+        }
+        guard let contact3 = Contact(name: "James Landay", accepted: false) else{
+            fatalError("Failed to instantiate contact3");
+        }
+        guard let contact4 = Contact(name: "Jeff Bezos", accepted: false) else{
+            fatalError("Failed to instantiate contact4");
+        }
+        self.contacts += [contact1, contact2, contact3, contact4];
     }
 }
 

@@ -8,14 +8,33 @@
 
 import UIKit
 
-class AddFriendsTableViewController: UITableViewController {
+class AddFriendsTableViewController: UITableViewController, AddFriendsTableViewCellDelegate {
+    
+    func didPressButton(_ sender: UIButton?, buttonLabel: UILabel, nameLabel: UILabel) {
+        if let button = sender
+        {
+            button.setImage(UIImage(named: "sentRequest"), for: .normal)
+            buttonLabel.text = "Request sent"
+            for (index, contact) in SharedData.sharedDataInstance.contacts.enumerated() {
+                if(contact.name == nameLabel.text){
+                    SharedData.sharedDataInstance.contacts[index].accepted = true
+                    break
+                }
+            }
+        }
+        else{
+            print("what the fuck is going on")
+        }
+        
+    }
+    
     
     @IBOutlet weak var backButton: UIButton!
-    var requests = [String]();
+    var contacts = SharedData.sharedDataInstance.contacts
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRequests();
+//        loadRequests();
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,13 +51,11 @@ class AddFriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return requests.count
+        return contacts.count
     }
 
     
@@ -48,47 +65,27 @@ class AddFriendsTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of AddFriendsTableViewCell.")
         }
 
-        let request = requests[indexPath.row]
-        cell.nameLabel.text = request
+        let contact = SharedData.sharedDataInstance.contacts[indexPath.row]
+        cell.nameLabel.text = contact.name
+        if(!contact.accepted){
+            cell.iconButton.setImage(UIImage(named: "addFriends"), for: .normal)
+            cell.buttonLabel.text = "Add friend"
+        }
+        else {
+            cell.iconButton.setImage(UIImage(named: "sentRequest"), for: .normal)
+            cell.buttonLabel.text = "Request sent"
+        }
+        
+        //Dealing with delegate shit
+        cell.cellDelegate = self
+        cell.tag = indexPath.row
 
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(contacts[indexPath.row])
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
@@ -103,8 +100,6 @@ class AddFriendsTableViewController: UITableViewController {
     @IBAction func goBack(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    private func loadRequests(){
-        requests += ["James Landay", "Elon Musk", "Jerry Cain"];
-    }
+    
 
 }

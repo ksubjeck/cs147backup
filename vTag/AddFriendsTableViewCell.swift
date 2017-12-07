@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol AddFriendsTableViewCellDelegate : class {
+    func didPressButton(_ sender: UIButton?, buttonLabel: UILabel, nameLabel: UILabel)
+}
+
 class AddFriendsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var buttonLabel: UILabel!
+    weak var cellDelegate: AddFriendsTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +31,7 @@ class AddFriendsTableViewCell: UITableViewCell {
     }
 
     @IBAction func addFriend(_ sender: UIButton) {
-        print("kdog")
+        let buttonLabel = self.buttonLabel
+        cellDelegate?.didPressButton(sender, buttonLabel: buttonLabel!, nameLabel: nameLabel!)
     }
 }
