@@ -11,7 +11,6 @@ import UIKit
 class SentTagTableViewController: UITableViewController {
 
     //MARK: Properties
-    var sentTags = [Tag]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +26,10 @@ class SentTagTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData();
+    }
 
     // MARK: - Table view data source
 
@@ -36,7 +39,7 @@ class SentTagTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return sentTags.count
+        return SharedData.sharedDataInstance.sentTags.count
     }
 
     
@@ -47,7 +50,7 @@ class SentTagTableViewController: UITableViewController {
         }
         
         // Configure the cell...
-        let sentTag = sentTags[indexPath.row]
+        let sentTag = SharedData.sharedDataInstance.sentTags[indexPath.row]
         cell.nameLabel.text = sentTag.name
         cell.photoImageView.image = sentTag.photo
         cell.recipientControl.text = sentTag.recipient
@@ -107,24 +110,24 @@ class SentTagTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    private func loadSentTags() {
-        
-        let photo1 = UIImage(named: "sentTag1");
-        let photo2 = UIImage(named: "sentTag2");
-        let photo3 = UIImage(named: "sentTag3");
-        
-        guard let firstSentTag = Tag(name: "Call BFF", photo: photo1, dateDue: "12-31-2017", creator: "Me", recipient: "BFF") else {
-            fatalError("Unable to instantiate firstSentTag")
-        }
-        guard let secondSentTag = Tag(name: "Meet me at Starbucks", photo: photo2, dateDue: "01-07-2018", creator: "Me", recipient: "Abraham Lincoln") else {
-            fatalError("Unable to instantiate firstSentTag")
-        }
-        guard let thirdSentTag = Tag(name: "The meatloaf!", photo: photo3, dateDue: "02-16-2018", creator: "Me", recipient: "Mom") else {
-            fatalError("Unable to instantiate firstSentTag")
-        }
-        
-        sentTags += [firstSentTag, secondSentTag, thirdSentTag]
-    }
+//    private func loadSentTags() {
+//
+//        let photo1 = UIImage(named: "sentTag1");
+//        let photo2 = UIImage(named: "sentTag2");
+//        let photo3 = UIImage(named: "sentTag3");
+//
+//        guard let firstSentTag = Tag(name: "Call BFF", photo: photo1, dateDue: "12-31-2017", creator: "Me", recipient: "BFF") else {
+//            fatalError("Unable to instantiate firstSentTag")
+//        }
+//        guard let secondSentTag = Tag(name: "Meet me at Starbucks", photo: photo2, dateDue: "01-07-2018", creator: "Me", recipient: "Abraham Lincoln") else {
+//            fatalError("Unable to instantiate firstSentTag")
+//        }
+//        guard let thirdSentTag = Tag(name: "The meatloaf!", photo: photo3, dateDue: "02-16-2018", creator: "Me", recipient: "Mom") else {
+//            fatalError("Unable to instantiate firstSentTag")
+//        }
+//
+//        sentTags += [firstSentTag, secondSentTag, thirdSentTag]
+//    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -132,7 +135,7 @@ class SentTagTableViewController: UITableViewController {
         
         switch(segue.identifier ?? "") {
             
-        case "SentTagInventorySegue": 
+        case "SentTagInventorySegue":
             
             guard let tagDetailViewController = segue.destination as? TagInformation else {
                 fatalError("Unexpected destination: \(segue.destination)")

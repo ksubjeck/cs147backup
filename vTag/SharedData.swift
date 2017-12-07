@@ -29,6 +29,25 @@ class SharedData {
         }
         self.tags += [tag1, tag2, tag3];
     }
+    
+    func loadSentTags() {
+        
+        let photo1 = UIImage(named: "sentTag1");
+        let photo2 = UIImage(named: "sentTag2");
+        let photo3 = UIImage(named: "sentTag3");
+        
+        guard let firstSentTag = Tag(name: "Call BFF", photo: photo1, dateDue: "12-31-2017", creator: "Me", recipient: "BFF") else {
+            fatalError("Unable to instantiate firstSentTag")
+        }
+        guard let secondSentTag = Tag(name: "Meet me at Starbucks", photo: photo2, dateDue: "01-07-2018", creator: "Me", recipient: "Abraham Lincoln") else {
+            fatalError("Unable to instantiate firstSentTag")
+        }
+        guard let thirdSentTag = Tag(name: "The meatloaf!", photo: photo3, dateDue: "02-16-2018", creator: "Me", recipient: "Mom") else {
+            fatalError("Unable to instantiate firstSentTag")
+        }
+        
+        self.sentTags += [firstSentTag, secondSentTag, thirdSentTag]
+    }
 }
 
 
